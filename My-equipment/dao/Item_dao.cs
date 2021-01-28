@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    class Item_dao : interfaces.Item_interface
+    class Item_dao : interfaces.Item_interface<Item>
     {
         controler.Database_controller database_Controller;
 
@@ -16,14 +16,11 @@ namespace My_equipment.dao
         {
             return value.ToString().Replace(",", ".");
         }
-        private float parse_string_sql_to_float(string value)
-        {
-            return float.Parse(value.Replace(",", "."));
-        }
+       
         public void add_item(Item item)
         {
             string querry;
-            querry = "insert into items(item_name , item_bought ,item_retired ,price ,description,company_name,rating) values('" +
+            querry = "insert into items(item_name , item_bought ,item_retired ,price ,description,company_name,rating) OUTPUT INSERTED.ID values('" +
                 item.item_name + "','" +
                 item.item_bought.ToString("yyyy-MM-dd") + "','" +
                 item.item_retired.ToString("yyyy-MM-dd") + "'," +
@@ -33,6 +30,7 @@ namespace My_equipment.dao
                 parseFloatToSql(item.rating) + ") ";
 
             database_Controller.insert_create_delete(querry);
+
         }
 
         public void delete_item(Item item)

@@ -8,16 +8,16 @@ using My_equipment.model;
 
 namespace My_equipment.interfaces
 {
-    interface Item_interface
+    interface Item_interface<Class_type>
     {
    
-         List<Item> get_items();
-         void add_item(Item item);
-         void delete_item(Item item);
+         List<Class_type> get_items();
+         void add_item(Class_type item);
+         void delete_item(Class_type item);
         void delete_item(int id);
-        void update_item(Item item);
+        void update_item(Class_type item);
 
         string[] get_header_names(int value);
-        Item get_item_from_row(DataGridViewRow row);
+        Class_type get_item_from_row(DataGridViewRow row);
     }
 }

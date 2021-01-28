@@ -24,18 +24,30 @@ namespace My_equipment.controler
                 "rating float," +
                 "); ");
 
+            insert_create_delete("CREATE TABLE Headphones(ID int IDENTITY(1, 1) PRIMARY KEY," +
+                "cable_lenght float," +
+                "microphone bit," +
+                "volume_setter bit," +
+                "mute_button bit," +
+                "); ");
+
+            insert_create_delete("CREATE TABLE Items_Headphones(Headphone_id int,Item_id int);");
+
         }
         public void connect()
         {
             sqlConnection.Open();
         }
 
-        public void insert_create_delete(string querry)
+        public int insert_create_delete(string querry)
         {
             SqlCommand cmd = new SqlCommand(querry, sqlConnection);
             connect();
-            cmd.ExecuteNonQuery();
+            //cmd.ExecuteNonQuery();
+
+            Int32 newId = (Int32)cmd.ExecuteScalar();
             disconnect();
+            return newId;
         }
         public void disconnect()
         {

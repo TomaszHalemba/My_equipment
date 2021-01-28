@@ -34,6 +34,7 @@ namespace My_equipment
             this.add_button = new System.Windows.Forms.Button();
             this.modify_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // show_button
@@ -85,11 +86,22 @@ namespace My_equipment
             this.delete_button.UseVisualStyleBackColor = true;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "All"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 130);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.modify_button);
             this.Controls.Add(this.add_button);
@@ -108,6 +120,7 @@ namespace My_equipment
         private System.Windows.Forms.Button add_button;
         private System.Windows.Forms.Button modify_button;
         private System.Windows.Forms.Button delete_button;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

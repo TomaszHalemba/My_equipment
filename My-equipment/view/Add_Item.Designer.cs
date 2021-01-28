@@ -50,21 +50,21 @@ namespace My_equipment.view
             // 
             // item_name_textbox
             // 
-            this.item_name_textbox.Location = new System.Drawing.Point(114, 15);
+            this.item_name_textbox.Location = new System.Drawing.Point(109, 9);
             this.item_name_textbox.Name = "item_name_textbox";
             this.item_name_textbox.Size = new System.Drawing.Size(100, 20);
             this.item_name_textbox.TabIndex = 0;
             // 
             // price_textbox
             // 
-            this.price_textbox.Location = new System.Drawing.Point(114, 95);
+            this.price_textbox.Location = new System.Drawing.Point(109, 89);
             this.price_textbox.Name = "price_textbox";
             this.price_textbox.Size = new System.Drawing.Size(100, 20);
             this.price_textbox.TabIndex = 3;
             // 
             // description_textbox
             // 
-            this.description_textbox.Location = new System.Drawing.Point(114, 174);
+            this.description_textbox.Location = new System.Drawing.Point(109, 168);
             this.description_textbox.Multiline = true;
             this.description_textbox.Name = "description_textbox";
             this.description_textbox.Size = new System.Drawing.Size(200, 96);
@@ -72,21 +72,21 @@ namespace My_equipment.view
             // 
             // rating_textbox
             // 
-            this.rating_textbox.Location = new System.Drawing.Point(114, 148);
+            this.rating_textbox.Location = new System.Drawing.Point(109, 142);
             this.rating_textbox.Name = "rating_textbox";
             this.rating_textbox.Size = new System.Drawing.Size(100, 20);
             this.rating_textbox.TabIndex = 5;
             // 
             // company_name_textbox
             // 
-            this.company_name_textbox.Location = new System.Drawing.Point(114, 121);
+            this.company_name_textbox.Location = new System.Drawing.Point(109, 115);
             this.company_name_textbox.Name = "company_name_textbox";
             this.company_name_textbox.Size = new System.Drawing.Size(100, 20);
             this.company_name_textbox.TabIndex = 4;
             // 
             // add_item_button
             // 
-            this.add_item_button.Location = new System.Drawing.Point(114, 276);
+            this.add_item_button.Location = new System.Drawing.Point(109, 270);
             this.add_item_button.Name = "add_item_button";
             this.add_item_button.Size = new System.Drawing.Size(100, 39);
             this.add_item_button.TabIndex = 7;
@@ -96,14 +96,14 @@ namespace My_equipment.view
             // 
             // dateTime_bought_picker
             // 
-            this.dateTime_bought_picker.Location = new System.Drawing.Point(114, 42);
+            this.dateTime_bought_picker.Location = new System.Drawing.Point(109, 36);
             this.dateTime_bought_picker.Name = "dateTime_bought_picker";
             this.dateTime_bought_picker.Size = new System.Drawing.Size(200, 20);
             this.dateTime_bought_picker.TabIndex = 8;
             // 
             // dateTime_retired_picker
             // 
-            this.dateTime_retired_picker.Location = new System.Drawing.Point(114, 68);
+            this.dateTime_retired_picker.Location = new System.Drawing.Point(109, 62);
             this.dateTime_retired_picker.Name = "dateTime_retired_picker";
             this.dateTime_retired_picker.Size = new System.Drawing.Size(200, 20);
             this.dateTime_retired_picker.TabIndex = 9;
@@ -111,7 +111,7 @@ namespace My_equipment.view
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 15);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 15);
             this.label1.TabIndex = 10;
@@ -120,7 +120,7 @@ namespace My_equipment.view
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 42);
+            this.label2.Location = new System.Drawing.Point(12, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 15);
             this.label2.TabIndex = 11;
@@ -129,7 +129,7 @@ namespace My_equipment.view
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 95);
+            this.label3.Location = new System.Drawing.Point(12, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 13;
@@ -138,7 +138,7 @@ namespace My_equipment.view
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 68);
+            this.label4.Location = new System.Drawing.Point(12, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 12;
@@ -147,7 +147,7 @@ namespace My_equipment.view
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 174);
+            this.label6.Location = new System.Drawing.Point(12, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 15);
             this.label6.TabIndex = 16;
@@ -156,7 +156,7 @@ namespace My_equipment.view
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 148);
+            this.label7.Location = new System.Drawing.Point(12, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 15);
             this.label7.TabIndex = 15;
@@ -165,7 +165,7 @@ namespace My_equipment.view
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 121);
+            this.label8.Location = new System.Drawing.Point(12, 115);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 15);
             this.label8.TabIndex = 14;
@@ -176,7 +176,7 @@ namespace My_equipment.view
             this.bought_date_checkbox.AutoSize = true;
             this.bought_date_checkbox.Checked = true;
             this.bought_date_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.bought_date_checkbox.Location = new System.Drawing.Point(320, 44);
+            this.bought_date_checkbox.Location = new System.Drawing.Point(315, 38);
             this.bought_date_checkbox.Name = "bought_date_checkbox";
             this.bought_date_checkbox.Size = new System.Drawing.Size(92, 19);
             this.bought_date_checkbox.TabIndex = 17;
@@ -188,7 +188,7 @@ namespace My_equipment.view
             this.retired_checkbox.AutoSize = true;
             this.retired_checkbox.Checked = true;
             this.retired_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.retired_checkbox.Location = new System.Drawing.Point(320, 69);
+            this.retired_checkbox.Location = new System.Drawing.Point(315, 63);
             this.retired_checkbox.Name = "retired_checkbox";
             this.retired_checkbox.Size = new System.Drawing.Size(92, 19);
             this.retired_checkbox.TabIndex = 18;

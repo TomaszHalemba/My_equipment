@@ -42,6 +42,17 @@ namespace My_equipment.model
             this.rating = rating;
             this.id = id;
         }
+        public Item(Item item)
+        {
+            this.item_name = item.item_name;
+            this.item_bought = item.item_bought;
+            this.item_retired = item.item_retired;
+            this.price = item.price;
+            this.description = item.description;
+            this.company_name = item.company_name;
+            this.rating = item.rating;
+            this.id = item.id;
+        }
         public Item(string item_name, DateTime item_bought, DateTime item_retired, float price, string description, string company_name, float rating)
         {
             this.item_name = item_name;
