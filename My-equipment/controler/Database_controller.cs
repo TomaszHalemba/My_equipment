@@ -31,7 +31,9 @@ namespace My_equipment.controler
                 "mute_button bit," +
                 "); ");
 
-            insert_create_delete("CREATE TABLE Items_Headphones(Headphone_id int,Item_id int);");
+            insert_create_delete("CREATE TABLE Items_Headphones(" +
+                "Headphone_id int FOREIGN KEY REFERENCES Headphones(id) ON DELETE CASCADE" +
+                ",Item_id int FOREIGN KEY REFERENCES items(id) ON DELETE CASCADE);");
 
         }
         public void connect()
@@ -39,7 +41,7 @@ namespace My_equipment.controler
             sqlConnection.Open();
         }
 
-        public int insert_create_delete(string querry)
+        public int insert_create_delete_return_id(string querry)
         {
             SqlCommand cmd = new SqlCommand(querry, sqlConnection);
             connect();
@@ -48,6 +50,13 @@ namespace My_equipment.controler
             Int32 newId = (Int32)cmd.ExecuteScalar();
             disconnect();
             return newId;
+        }
+        public void insert_create_delete(string querry)
+        {
+            SqlCommand cmd = new SqlCommand(querry, sqlConnection);
+            connect();
+            cmd.ExecuteNonQuery();
+            disconnect();
         }
         public void disconnect()
         {

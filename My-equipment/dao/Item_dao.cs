@@ -29,7 +29,7 @@ namespace My_equipment.dao
                 item.company_name + "'," +
                 parseFloatToSql(item.rating) + ") ";
 
-            database_Controller.insert_create_delete(querry);
+            database_Controller.insert_create_delete_return_id(querry);
 
         }
 
@@ -125,7 +125,7 @@ namespace My_equipment.dao
             string querry;
             querry = "delete from items where id = " + id.ToString();
 
-            database_Controller.insert_create_delete(querry);
+            database_Controller.insert_create_delete_return_id(querry);
         }
 
         public void update_item(Item item)
@@ -141,7 +141,7 @@ namespace My_equipment.dao
                 parseFloatToSql(item.rating) +
                 " where id = " + item.id;
 
-            database_Controller.insert_create_delete(querry);
+            database_Controller.insert_create_delete_return_id(querry);
         }
 
         public string[] get_header_names(int value)

@@ -23,14 +23,15 @@ namespace My_equipment.model
 
         public Item()
         {
-
+            this.item_name = "";
+            this.item_bought = new DateTime();
+            this.item_retired = new DateTime();
+            this.price = 0;
+            this.description = "";
+            this.company_name = "";
+            this.rating = 0;
         }
-        public Item(string[] table)
-        {
 
-            item_name = table[0];
-            description = table[1];
-        }
         public Item (string item_name , DateTime item_bought, DateTime item_retired,float price , string description, string company_name,float rating,int id)
         {
             this.item_name = item_name;
@@ -41,6 +42,17 @@ namespace My_equipment.model
             this.company_name = company_name;
             this.rating = rating;
             this.id = id;
+        }
+        public void setItemValues(Item item)
+        {
+            this.item_name = item.item_name;
+            this.item_bought = item.item_bought;
+            this.item_retired = item.item_retired;
+            this.price = item.price;
+            this.description = item.description;
+            this.company_name = item.company_name;
+            this.rating = item.rating;
+            this.id = item.id;
         }
         public Item(Item item)
         {

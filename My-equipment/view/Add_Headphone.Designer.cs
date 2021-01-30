@@ -47,7 +47,7 @@ namespace My_equipment.view
             this.price_textbox = new System.Windows.Forms.TextBox();
             this.item_name_textbox = new System.Windows.Forms.TextBox();
             this.Cable_lenght = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cable_lenght_textbox = new System.Windows.Forms.TextBox();
             this.Microphone_checkbox = new System.Windows.Forms.CheckBox();
             this.Volume_setter_checkbox = new System.Windows.Forms.CheckBox();
             this.Mute_button_checkbox = new System.Windows.Forms.CheckBox();
@@ -162,6 +162,7 @@ namespace My_equipment.view
             this.add_headphone_button.TabIndex = 24;
             this.add_headphone_button.Text = "Add Headphone";
             this.add_headphone_button.UseVisualStyleBackColor = true;
+            this.add_headphone_button.Click += new System.EventHandler(this.add_headphone_button_Click);
             // 
             // description_textbox
             // 
@@ -208,12 +209,12 @@ namespace My_equipment.view
             this.Cable_lenght.TabIndex = 36;
             this.Cable_lenght.Text = "Cable lenght";
             // 
-            // textBox1
+            // cable_lenght_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(504, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 37;
+            this.cable_lenght_textbox.Location = new System.Drawing.Point(504, 9);
+            this.cable_lenght_textbox.Name = "cable_lenght_textbox";
+            this.cable_lenght_textbox.Size = new System.Drawing.Size(100, 20);
+            this.cable_lenght_textbox.TabIndex = 37;
             // 
             // Microphone_checkbox
             // 
@@ -253,7 +254,7 @@ namespace My_equipment.view
             this.Controls.Add(this.Mute_button_checkbox);
             this.Controls.Add(this.Volume_setter_checkbox);
             this.Controls.Add(this.Microphone_checkbox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cable_lenght_textbox);
             this.Controls.Add(this.Cable_lenght);
             this.Controls.Add(this.retired_checkbox);
             this.Controls.Add(this.bought_date_checkbox);
@@ -300,7 +301,7 @@ namespace My_equipment.view
         private System.Windows.Forms.TextBox price_textbox;
         private System.Windows.Forms.TextBox item_name_textbox;
         private System.Windows.Forms.Label Cable_lenght;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cable_lenght_textbox;
         private System.Windows.Forms.CheckBox Microphone_checkbox;
         private System.Windows.Forms.CheckBox Volume_setter_checkbox;
         private System.Windows.Forms.CheckBox Mute_button_checkbox;
