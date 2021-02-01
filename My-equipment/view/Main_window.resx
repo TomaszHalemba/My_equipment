@@ -118,29 +118,173 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="show_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 12</value>
+  </data>
+  <data name="show_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1092, 426</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="show_button.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="show_button.Text" xml:space="preserve">
+    <value>Show</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;show_button.Name" xml:space="preserve">
+    <value>show_button</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;show_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;show_button.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;show_button.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 1</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1052, 448</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="add_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 41</value>
+  </data>
+  <data name="add_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="add_button.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="add_button.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;add_button.Name" xml:space="preserve">
+    <value>add_button</value>
+  </data>
+  <data name="&gt;&gt;add_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;add_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;add_button.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="modify_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 71</value>
+  </data>
+  <data name="modify_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="modify_button.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="modify_button.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="&gt;&gt;modify_button.Name" xml:space="preserve">
+    <value>modify_button</value>
+  </data>
+  <data name="&gt;&gt;modify_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modify_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;modify_button.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="delete_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 101</value>
+  </data>
+  <data name="delete_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="delete_button.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="delete_button.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;delete_button.Name" xml:space="preserve">
+    <value>delete_button</value>
+  </data>
+  <data name="&gt;&gt;delete_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;delete_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;delete_button.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Category_combobox.Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Category_combobox.Items1" xml:space="preserve">
+    <value>Headphones</value>
+  </data>
+  <data name="Category_combobox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 130</value>
+  </data>
+  <data name="Category_combobox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="Category_combobox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;Category_combobox.Name" xml:space="preserve">
+    <value>Category_combobox</value>
+  </data>
+  <data name="&gt;&gt;Category_combobox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Category_combobox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Category_combobox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Create_database_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 415</value>
+  </data>
+  <data name="Create_database_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 23</value>
+  </data>
+  <data name="Create_database_button.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Create_database_button.Text" xml:space="preserve">
+    <value>Create database</value>
+  </data>
+  <data name="&gt;&gt;Create_database_button.Name" xml:space="preserve">
+    <value>Create_database_button</value>
+  </data>
+  <data name="&gt;&gt;Create_database_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Create_database_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Create_database_button.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -150,13 +294,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1116, 450</value>
+    <value>1191, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Headphones view</value>
+    <value>Form1</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Item_views</value>
+    <value>Form1</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

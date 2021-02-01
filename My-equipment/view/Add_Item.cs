@@ -20,35 +20,40 @@ namespace My_equipment.view
         public Add_Item()
         {
             InitializeComponent();
+            add_item_button.Visible = true;
+            modify_button.Visible = false;
         }
         public Add_Item(int mode)
         {
             InitializeComponent();
             this.mode = mode;
+            add_item_button.Visible = false;
+            modify_button.Visible = false;
 
             if (mode == 0)
             {
-                add_item_button.Text = "Add item";
+                add_item_button.Visible = true;
             }
             else
             if (mode == 1)
             {
-                add_item_button.Text = "Modify item";
+                modify_button.Visible = true;
             }
         }
         public Add_Item(int mode, Item item)
         {
             InitializeComponent();
-            this.mode = mode;
+            add_item_button.Visible = false;
+            modify_button.Visible = false;
 
             if (mode == 0)
             {
-                add_item_button.Text = "Add item";
+                add_item_button.Visible = true;
             }
             else
             if (mode == 1)
             {
-                add_item_button.Text = "Modify item";
+                modify_button.Visible = true;
                 set_values(item);
             }
         }
@@ -65,7 +70,7 @@ namespace My_equipment.view
             rating_textbox.Text = item.rating.ToString();
         }
 
-        private void add_item_button_Click(object sender, EventArgs e)
+        private Item get_item_from_form()
         {
             string item_name = item_name_textbox.Text;
             DateTime item_bought = dateTime_bought_picker.Value;
@@ -74,18 +79,21 @@ namespace My_equipment.view
             string description = description_textbox.Text;
             string company_name = company_name_textbox.Text;
             float rating = float.Parse(rating_textbox.Text);
-            if (mode == 0)
-            {
-                item_Dao.add_item(new Item(item_name, item_bought, item_retired, price, description, company_name, rating));
-            }
-            else
-                if (mode == 1)
-            {
-                item_Dao.update_item(new Item(item_name, item_bought, item_retired, price, description, company_name, rating,this.item_id));
-            }
 
+            return new Item(item_name, item_bought, item_retired, price, description, company_name, rating, item_id);
         }
 
+        private void add_item_button_Click(object sender, EventArgs e)
+        {
+ 
+            item_Dao.add_item(get_item_from_form());
+        }
 
+        private void Modify_button_Click(object sender, EventArgs e)
+        {
+           
+
+            item_Dao.update_item(get_item_from_form());
+        }
     }
 }

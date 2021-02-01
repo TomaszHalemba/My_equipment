@@ -20,33 +20,42 @@ namespace My_equipment.view
         public Add_Headphone()
         {
             InitializeComponent();
+            add_headphone_button.Visible = true;
+            modify_item_button.Visible = false;
         }
         public Add_Headphone(int mode)
         {
             InitializeComponent();
             this.mode = mode;
 
+            add_headphone_button.Visible = false;
+            modify_item_button.Visible = false;
+
             if (mode == 0)
             {
-                add_headphone_button.Text = "Add item";
+                add_headphone_button.Visible = true;
             }
             else
             if (mode == 1)
             {
-                add_headphone_button.Text = "Modify item";
+                modify_item_button.Visible = true;
             }
         }
 
-        private void set_values(Item item)
+        private void set_values(Headphone headphone)
         {
-            item_id = item.id;
-            item_name_textbox.Text = item.item_name;
-            dateTime_bought_picker.Value = item.item_bought;
-            dateTime_retired_picker.Value = item.item_retired;
-            price_textbox.Text = item.price.ToString();
-            description_textbox.Text = item.description;
-            company_name_textbox.Text = item.company_name;
-            rating_textbox.Text = item.rating.ToString();
+            item_id = headphone.id;
+            item_name_textbox.Text = headphone.item_name;
+            dateTime_bought_picker.Value = headphone.item_bought;
+            dateTime_retired_picker.Value = headphone.item_retired;
+            price_textbox.Text = headphone.price.ToString();
+            description_textbox.Text = headphone.description;
+            company_name_textbox.Text = headphone.company_name;
+            rating_textbox.Text = headphone.rating.ToString();
+            cable_lenght_textbox.Text = headphone.cable_lenght.ToString();
+            microphone_checkbox.Checked = headphone.microphone;
+            volume_setter_checkbox.Checked = headphone.volume_setter;
+            mute_button_checkbox.Checked= headphone.mute_button;
         }
 
         public Add_Headphone(int mode, Headphone item)
@@ -65,8 +74,7 @@ namespace My_equipment.view
                 set_values(item);
             }
         }
-
-        private void add_headphone_button_Click(object sender, EventArgs e)
+        private Headphone Get_headphone_from_form()
         {
             string item_name = item_name_textbox.Text;
             DateTime item_bought = dateTime_bought_picker.Value;
@@ -76,18 +84,22 @@ namespace My_equipment.view
             string company_name = company_name_textbox.Text;
             float rating = float.Parse(rating_textbox.Text);
             float cable_lenght = float.Parse(cable_lenght_textbox.Text);
-            bool microphone = Microphone_checkbox.Checked;
-            bool volume_setter = Volume_setter_checkbox.Checked;
-            bool mute_button = Mute_button_checkbox.Checked;
-            if (mode == 0)
-            {
-                headphone_dao.add_item(new Headphone(new Item(item_name, item_bought, item_retired, price, description, company_name, rating), cable_lenght, microphone, volume_setter, mute_button));
-            }
-            else
-                if (mode == 1)
-            {
-                headphone_dao.update_item(new Headphone(new Item(item_name, item_bought, item_retired, price, description, company_name, rating, this.item_id),cable_lenght,microphone,volume_setter,mute_button));
-            }
+            bool microphone = microphone_checkbox.Checked;
+            bool volume_setter = volume_setter_checkbox.Checked;
+            bool mute_button = mute_button_checkbox.Checked;
+
+            return new Headphone(new Item(item_name, item_bought, item_retired, price, description, company_name, rating), cable_lenght, microphone, volume_setter, mute_button);
+        }
+
+        private void add_headphone_button_Click(object sender, EventArgs e)
+        {
+            headphone_dao.add_item(Get_headphone_from_form());
+
+        }
+
+        private void Modify_item_button_Click(object sender, EventArgs e)
+        {
+            headphone_dao.update_item(Get_headphone_from_form());
         }
     }
 }

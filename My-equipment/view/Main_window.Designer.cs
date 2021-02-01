@@ -29,6 +29,7 @@ namespace My_equipment
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.show_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.add_button = new System.Windows.Forms.Button();
@@ -40,50 +41,36 @@ namespace My_equipment
             // 
             // show_button
             // 
-            this.show_button.Location = new System.Drawing.Point(58, 12);
+            resources.ApplyResources(this.show_button, "show_button");
             this.show_button.Name = "show_button";
-            this.show_button.Size = new System.Drawing.Size(75, 23);
-            this.show_button.TabIndex = 0;
             this.show_button.Tag = "show_button";
-            this.show_button.Text = "Show";
             this.show_button.UseVisualStyleBackColor = true;
             this.show_button.Click += new System.EventHandler(this.show_button_Click);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(136, 1);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 448);
-            this.panel1.TabIndex = 1;
             // 
             // add_button
             // 
-            this.add_button.Location = new System.Drawing.Point(58, 41);
+            resources.ApplyResources(this.add_button, "add_button");
             this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(75, 23);
-            this.add_button.TabIndex = 3;
             this.add_button.Tag = "add_button";
-            this.add_button.Text = "Add";
             this.add_button.UseVisualStyleBackColor = true;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // modify_button
             // 
-            this.modify_button.Location = new System.Drawing.Point(58, 71);
+            resources.ApplyResources(this.modify_button, "modify_button");
             this.modify_button.Name = "modify_button";
-            this.modify_button.Size = new System.Drawing.Size(75, 23);
-            this.modify_button.TabIndex = 5;
-            this.modify_button.Text = "Modify";
             this.modify_button.UseVisualStyleBackColor = true;
             this.modify_button.Click += new System.EventHandler(this.modiffy_button_Click);
             // 
             // delete_button
             // 
-            this.delete_button.Location = new System.Drawing.Point(58, 101);
+            resources.ApplyResources(this.delete_button, "delete_button");
             this.delete_button.Name = "delete_button";
-            this.delete_button.Size = new System.Drawing.Size(75, 23);
-            this.delete_button.TabIndex = 6;
-            this.delete_button.Text = "Delete";
             this.delete_button.UseVisualStyleBackColor = true;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
@@ -91,28 +78,22 @@ namespace My_equipment
             // 
             this.Category_combobox.FormattingEnabled = true;
             this.Category_combobox.Items.AddRange(new object[] {
-            "Items",
-            "Headphones"});
-            this.Category_combobox.Location = new System.Drawing.Point(12, 130);
+            resources.GetString("Category_combobox.Items"),
+            resources.GetString("Category_combobox.Items1")});
+            resources.ApplyResources(this.Category_combobox, "Category_combobox");
             this.Category_combobox.Name = "Category_combobox";
-            this.Category_combobox.Size = new System.Drawing.Size(121, 21);
-            this.Category_combobox.TabIndex = 7;
             // 
             // Create_database_button
             // 
-            this.Create_database_button.Location = new System.Drawing.Point(12, 415);
+            resources.ApplyResources(this.Create_database_button, "Create_database_button");
             this.Create_database_button.Name = "Create_database_button";
-            this.Create_database_button.Size = new System.Drawing.Size(118, 23);
-            this.Create_database_button.TabIndex = 8;
-            this.Create_database_button.Text = "Create database";
             this.Create_database_button.UseVisualStyleBackColor = true;
             this.Create_database_button.Click += new System.EventHandler(this.Create_database_button_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 450);
             this.Controls.Add(this.Create_database_button);
             this.Controls.Add(this.Category_combobox);
             this.Controls.Add(this.delete_button);
@@ -121,7 +102,6 @@ namespace My_equipment
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.show_button);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }

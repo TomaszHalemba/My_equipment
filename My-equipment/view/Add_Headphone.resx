@@ -117,4 +117,652 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="retired_checkbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="retired_checkbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 63</value>
+  </data>
+  <data name="retired_checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 19</value>
+  </data>
+  <data name="retired_checkbox.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="retired_checkbox.Text" xml:space="preserve">
+    <value>Dont specify</value>
+  </data>
+  <data name="&gt;&gt;retired_checkbox.Name" xml:space="preserve">
+    <value>retired_checkbox</value>
+  </data>
+  <data name="&gt;&gt;retired_checkbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;retired_checkbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;retired_checkbox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="bought_date_checkbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bought_date_checkbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 38</value>
+  </data>
+  <data name="bought_date_checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 19</value>
+  </data>
+  <data name="bought_date_checkbox.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="bought_date_checkbox.Text" xml:space="preserve">
+    <value>Dont specify</value>
+  </data>
+  <data name="&gt;&gt;bought_date_checkbox.Name" xml:space="preserve">
+    <value>bought_date_checkbox</value>
+  </data>
+  <data name="&gt;&gt;bought_date_checkbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bought_date_checkbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bought_date_checkbox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="description_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="description_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 168</value>
+  </data>
+  <data name="description_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 15</value>
+  </data>
+  <data name="description_label.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="description_label.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="&gt;&gt;description_label.Name" xml:space="preserve">
+    <value>description_label</value>
+  </data>
+  <data name="&gt;&gt;description_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;description_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;description_label.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="rating_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rating_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 142</value>
+  </data>
+  <data name="rating_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
+  </data>
+  <data name="rating_label.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="rating_label.Text" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="&gt;&gt;rating_label.Name" xml:space="preserve">
+    <value>rating_label</value>
+  </data>
+  <data name="&gt;&gt;rating_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rating_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rating_label.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="company_name_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="company_name_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 115</value>
+  </data>
+  <data name="company_name_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 15</value>
+  </data>
+  <data name="company_name_label.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="company_name_label.Text" xml:space="preserve">
+    <value>Company name</value>
+  </data>
+  <data name="&gt;&gt;company_name_label.Name" xml:space="preserve">
+    <value>company_name_label</value>
+  </data>
+  <data name="&gt;&gt;company_name_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;company_name_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;company_name_label.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="price_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="price_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 89</value>
+  </data>
+  <data name="price_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 15</value>
+  </data>
+  <data name="price_label.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="price_label.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="&gt;&gt;price_label.Name" xml:space="preserve">
+    <value>price_label</value>
+  </data>
+  <data name="&gt;&gt;price_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;price_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;price_label.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="item_retired_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="item_retired_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 62</value>
+  </data>
+  <data name="item_retired_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 15</value>
+  </data>
+  <data name="item_retired_label.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="item_retired_label.Text" xml:space="preserve">
+    <value>Item retired</value>
+  </data>
+  <data name="&gt;&gt;item_retired_label.Name" xml:space="preserve">
+    <value>item_retired_label</value>
+  </data>
+  <data name="&gt;&gt;item_retired_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;item_retired_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;item_retired_label.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="bought_date_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bought_date_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 36</value>
+  </data>
+  <data name="bought_date_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 15</value>
+  </data>
+  <data name="bought_date_label.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="bought_date_label.Text" xml:space="preserve">
+    <value>Bought date</value>
+  </data>
+  <data name="&gt;&gt;bought_date_label.Name" xml:space="preserve">
+    <value>bought_date_label</value>
+  </data>
+  <data name="&gt;&gt;bought_date_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bought_date_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bought_date_label.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="item_name_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="item_name_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="item_name_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 15</value>
+  </data>
+  <data name="item_name_label.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="item_name_label.Text" xml:space="preserve">
+    <value>Item name</value>
+  </data>
+  <data name="&gt;&gt;item_name_label.Name" xml:space="preserve">
+    <value>item_name_label</value>
+  </data>
+  <data name="&gt;&gt;item_name_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;item_name_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;item_name_label.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="dateTime_retired_picker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 62</value>
+  </data>
+  <data name="dateTime_retired_picker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="dateTime_retired_picker.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;dateTime_retired_picker.Name" xml:space="preserve">
+    <value>dateTime_retired_picker</value>
+  </data>
+  <data name="&gt;&gt;dateTime_retired_picker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateTime_retired_picker.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dateTime_retired_picker.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="dateTime_bought_picker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 36</value>
+  </data>
+  <data name="dateTime_bought_picker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="dateTime_bought_picker.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;dateTime_bought_picker.Name" xml:space="preserve">
+    <value>dateTime_bought_picker</value>
+  </data>
+  <data name="&gt;&gt;dateTime_bought_picker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateTime_bought_picker.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dateTime_bought_picker.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="add_headphone_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 270</value>
+  </data>
+  <data name="add_headphone_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 39</value>
+  </data>
+  <data name="add_headphone_button.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="add_headphone_button.Text" xml:space="preserve">
+    <value>Add Headphone</value>
+  </data>
+  <data name="&gt;&gt;add_headphone_button.Name" xml:space="preserve">
+    <value>add_headphone_button</value>
+  </data>
+  <data name="&gt;&gt;add_headphone_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;add_headphone_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;add_headphone_button.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="description_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 168</value>
+  </data>
+  <data name="description_textbox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="description_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 96</value>
+  </data>
+  <data name="description_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;description_textbox.Name" xml:space="preserve">
+    <value>description_textbox</value>
+  </data>
+  <data name="&gt;&gt;description_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;description_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;description_textbox.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="rating_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 142</value>
+  </data>
+  <data name="rating_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="rating_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.Name" xml:space="preserve">
+    <value>rating_textbox</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="company_name_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 115</value>
+  </data>
+  <data name="company_name_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="company_name_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;company_name_textbox.Name" xml:space="preserve">
+    <value>company_name_textbox</value>
+  </data>
+  <data name="&gt;&gt;company_name_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;company_name_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;company_name_textbox.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="price_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 89</value>
+  </data>
+  <data name="price_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="price_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;price_textbox.Name" xml:space="preserve">
+    <value>price_textbox</value>
+  </data>
+  <data name="&gt;&gt;price_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;price_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;price_textbox.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="item_name_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 9</value>
+  </data>
+  <data name="item_name_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="item_name_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;item_name_textbox.Name" xml:space="preserve">
+    <value>item_name_textbox</value>
+  </data>
+  <data name="&gt;&gt;item_name_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;item_name_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;item_name_textbox.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="cable_lenght_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cable_lenght_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>421, 9</value>
+  </data>
+  <data name="cable_lenght_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 15</value>
+  </data>
+  <data name="cable_lenght_label.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="cable_lenght_label.Text" xml:space="preserve">
+    <value>Cable lenght</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_label.Name" xml:space="preserve">
+    <value>cable_lenght_label</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_label.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cable_lenght_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 9</value>
+  </data>
+  <data name="cable_lenght_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="cable_lenght_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_textbox.Name" xml:space="preserve">
+    <value>cable_lenght_textbox</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cable_lenght_textbox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="microphone_checkbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="microphone_checkbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 35</value>
+  </data>
+  <data name="microphone_checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 19</value>
+  </data>
+  <data name="microphone_checkbox.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="microphone_checkbox.Text" xml:space="preserve">
+    <value>Microphone</value>
+  </data>
+  <data name="&gt;&gt;microphone_checkbox.Name" xml:space="preserve">
+    <value>microphone_checkbox</value>
+  </data>
+  <data name="&gt;&gt;microphone_checkbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;microphone_checkbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;microphone_checkbox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="volume_setter_checkbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="volume_setter_checkbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 60</value>
+  </data>
+  <data name="volume_setter_checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 19</value>
+  </data>
+  <data name="volume_setter_checkbox.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="volume_setter_checkbox.Text" xml:space="preserve">
+    <value>Volume setter</value>
+  </data>
+  <data name="&gt;&gt;volume_setter_checkbox.Name" xml:space="preserve">
+    <value>volume_setter_checkbox</value>
+  </data>
+  <data name="&gt;&gt;volume_setter_checkbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;volume_setter_checkbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;volume_setter_checkbox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="mute_button_checkbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mute_button_checkbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 85</value>
+  </data>
+  <data name="mute_button_checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 19</value>
+  </data>
+  <data name="mute_button_checkbox.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="mute_button_checkbox.Text" xml:space="preserve">
+    <value>Mute button</value>
+  </data>
+  <data name="&gt;&gt;mute_button_checkbox.Name" xml:space="preserve">
+    <value>mute_button_checkbox</value>
+  </data>
+  <data name="&gt;&gt;mute_button_checkbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mute_button_checkbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mute_button_checkbox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 145</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 15</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>/10</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>611, 9</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 15</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="modify_item_button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="modify_item_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 270</value>
+  </data>
+  <data name="modify_item_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 39</value>
+  </data>
+  <data name="modify_item_button.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="modify_item_button.Text" xml:space="preserve">
+    <value>Modify Headphone</value>
+  </data>
+  <data name="&gt;&gt;modify_item_button.Name" xml:space="preserve">
+    <value>modify_item_button</value>
+  </data>
+  <data name="&gt;&gt;modify_item_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modify_item_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;modify_item_button.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add_Headphone</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Add_Headphone</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
