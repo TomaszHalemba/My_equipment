@@ -24,16 +24,13 @@ namespace My_equipment.controler
                 "rating float," +
                 "); ");
 
-            insert_create_delete("CREATE TABLE Headphones(ID int IDENTITY(1, 1) PRIMARY KEY," +
+            insert_create_delete("CREATE TABLE Headphones(ID int FOREIGN KEY REFERENCES items(id) ON DELETE CASCADE," +
                 "cable_lenght float," +
                 "microphone bit," +
                 "volume_setter bit," +
                 "mute_button bit," +
                 "); ");
 
-            insert_create_delete("CREATE TABLE Items_Headphones(" +
-                "Headphone_id int FOREIGN KEY REFERENCES Headphones(id) ON DELETE CASCADE" +
-                ",Item_id int FOREIGN KEY REFERENCES items(id) ON DELETE CASCADE);");
 
         }
         public void connect()
