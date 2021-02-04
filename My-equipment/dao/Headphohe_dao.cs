@@ -39,17 +39,14 @@ namespace My_equipment.dao
 
             int item_id = database_Controller.insert_create_delete_return_id(querry);
 
-            querry = "insert into Headphones(cable_lenght,microphone,volume_setter,mute_button) OUTPUT INSERTED.ID values(" +
+            querry = "insert into Headphones(id,cable_lenght,microphone,volume_setter,mute_button) OUTPUT INSERTED.ID values(" +
+                item_id.ToString()+","+
                 parseFloatToSql(item.cable_lenght) + "," +
                bool_to_int(item.microphone) + "," +
                 bool_to_int(item.volume_setter) + "," +
                 bool_to_int(item.mute_button) + ")";
             int headphone_id = database_Controller.insert_create_delete_return_id(querry);
 
-            querry = "insert into Items_Headphones(Headphone_id, Item_id) values(" +
-             headphone_id.ToString() + "," +
-              item_id.ToString() + ")";
-            database_Controller.insert_create_delete(querry);
 
 
         }
@@ -121,9 +118,8 @@ namespace My_equipment.dao
         public List<Headphone> get_items()
         {
             List<Headphone> headphones = new List<Headphone>();
-            List<Item> items = new List<Item>();
-            List<int> headphones_id = new List<int>();
-            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select("select id,cable_lenght,microphone,volume_setter,mute_button from Headphones");
+            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select("select i.id,i.item_name,i.item_bought,i.item_retired," +
+            "i.price,i.description,i.company_name,i.rating ,h.cable_lenght,h.microphone,h.volume_setter,h.mute_button from Headphones as h inner join items as i on i.id=h.id");
 
             int id = 0;
             float cable_lenght = 0;
@@ -147,72 +143,56 @@ namespace My_equipment.dao
                 if (dreader.IsDBNull(0) == false)
                 {
                     id = dreader.GetInt32(0);
-                    headphones_id.Add(id);
-                }
-                if (dreader.IsDBNull(1) == false)
-                {
-                    cable_lenght = (float)dreader.GetDouble(1);
-                }
-                if (dreader.IsDBNull(2) == false)
-                {
-                    microphone = (bool)dreader.GetSqlBoolean(2);
-                }
-                if (dreader.IsDBNull(3) == false)
-                {
-                    volume_setter = (bool)dreader.GetSqlBoolean(3);
-                }
-                if (dreader.IsDBNull(4) == false)
-                {
-                    mute_button = (bool)dreader.GetSqlBoolean(4);
-                }
-                headphones.Add(new Headphone(cable_lenght, microphone, volume_setter, mute_button));
-            }
-            database_Controller.disconnect();
-            dreader = database_Controller.select("select item_name,item_bought,item_retired," +
-            "price,description,company_name,rating,id from  items as i inner join Items_Headphones as ih on i.id=ih.Item_id where ih.Headphone_id in (" + string.Join(",", headphones_id) + ")");
 
-            int a = 0;
-            while (dreader.Read())
-            {
-                if (dreader.IsDBNull(0) == false)
-                {
-                    item_name = (string)dreader.GetValue(0);
                 }
                 if (dreader.IsDBNull(1) == false)
                 {
-                    item_bought = dreader.GetDateTime(1);
+                    item_name = (string)dreader.GetValue(1);
                 }
                 if (dreader.IsDBNull(2) == false)
                 {
-                    item_retired = dreader.GetDateTime(2);
+                    item_bought = dreader.GetDateTime(2);
                 }
                 if (dreader.IsDBNull(3) == false)
                 {
-                    price = (float)dreader.GetDouble(3);
+                    item_retired = dreader.GetDateTime(3);
                 }
                 if (dreader.IsDBNull(4) == false)
                 {
-                    description = (string)dreader.GetValue(4);
+                    price = (float)dreader.GetDouble(4);
                 }
                 if (dreader.IsDBNull(5) == false)
                 {
-                    company_name = (string)dreader.GetValue(5);
+                    description = (string)dreader.GetValue(5);
                 }
                 if (dreader.IsDBNull(6) == false)
                 {
-                    rating = (float)dreader.GetDouble(6);
+                    company_name = (string)dreader.GetValue(6);
                 }
                 if (dreader.IsDBNull(7) == false)
                 {
-                    id = dreader.GetInt32(7);
+                    rating = (float)dreader.GetDouble(7);
                 }
-                headphones[a].setItemValues(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id));
-
+                if (dreader.IsDBNull(8) == false)
+                {
+                    cable_lenght = (float)dreader.GetDouble(8);
+                }
+                if (dreader.IsDBNull(9) == false)
+                {
+                    microphone = (bool)dreader.GetSqlBoolean(9);
+                }
+                if (dreader.IsDBNull(10) == false)
+                {
+                    volume_setter = (bool)dreader.GetSqlBoolean(10);
+                }
+                if (dreader.IsDBNull(11) == false)
+                {
+                    mute_button = (bool)dreader.GetSqlBoolean(11);
+                }
+                headphones.Add(new Headphone(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id),cable_lenght, microphone, volume_setter, mute_button));
             }
-
-
-
             database_Controller.disconnect();
+
 
             return headphones;
         }
