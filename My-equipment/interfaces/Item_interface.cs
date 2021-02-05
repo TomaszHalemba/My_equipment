@@ -17,7 +17,6 @@ namespace My_equipment.interfaces
         void delete_item(int id);
         void update_item(Class_type item);
 
-        string[] get_header_names(int value);
-        Class_type get_item_from_row(DataGridViewRow row);
+     
     }
 }

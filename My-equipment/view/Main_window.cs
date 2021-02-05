@@ -20,6 +20,9 @@ namespace My_equipment
         Item_dao item_Dao = new Item_dao();
         Headphohe_dao headphohe_Dao = new Headphohe_dao();
 
+        private readonly int item_index=0;
+        private readonly int headphone_index = 1;
+
 
         public Form1()
         {
@@ -53,12 +56,13 @@ namespace My_equipment
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            if (Category_combobox.SelectedItem.ToString().Equals("Items"))
+            if (Category_combobox.SelectedIndex == item_index)
             {
+
                 Add_Item headphones_View = new Add_Item();
                 change_panel_content(headphones_View);
             }
-            else if (Category_combobox.SelectedItem.ToString().Equals("Headphones"))
+            else if (Category_combobox.SelectedIndex == headphone_index)
             {
 
                 Add_Headphone headphones_View = new Add_Headphone();
@@ -85,14 +89,14 @@ namespace My_equipment
 
 
 
-            if (Category_combobox.SelectedItem.ToString().Equals("Items"))
+            if (Category_combobox.SelectedIndex==item_index)
             {
                 bindingSource1.DataSource  = item_Dao.get_items();
                 header_names = item_Dao.get_header_names(0);
 
             }
 
-            else if (Category_combobox.SelectedItem.ToString().Equals("Headphones"))
+            else if (Category_combobox.SelectedIndex == headphone_index)
             {
                 bindingSource1.DataSource  = headphohe_Dao.get_items();
                 header_names = headphohe_Dao.get_header_names(0);
@@ -116,30 +120,68 @@ namespace My_equipment
 
         private void modiffy_button_Click(object sender, EventArgs e)
         {
-            //ustawić dane w item view, i przycisk zmienić, ustawić skąd on pochodzi
+            
 
             panel = (DataGridView)this.Controls.Find("dataGridView1", true)[0];
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
 
-            Item item = this.item_Dao.get_item_from_row(startingBalanceRow);
+           
+
+
+            if (Category_combobox.SelectedIndex == item_index)
+            {
+                Item item = this.item_Dao.get_item_from_row(startingBalanceRow);
+                Add_Item headphones_View = new Add_Item(1, item);
+                change_panel_content(headphones_View);
+
+            }
+
+            else if (Category_combobox.SelectedIndex == headphone_index)
+            {
+                model.Headphone item = this.headphohe_Dao.get_item_from_row(startingBalanceRow);
+                Add_Headphone headphones_View = new Add_Headphone(1, item);
+                change_panel_content(headphones_View);
+            }
+            else
+            {
+                Item item = this.item_Dao.get_item_from_row(startingBalanceRow);
+                Add_Item headphones_View = new Add_Item(1, item);
+                change_panel_content(headphones_View);
+            }
 
 
 
-            Add_Item headphones_View = new Add_Item(1, item);
-            change_panel_content(headphones_View);
 
 
 
-
-                
-            
         }
 
         private void delete_button_Click(object sender, EventArgs e)
         {
             panel = (DataGridView)this.Controls.Find("dataGridView1", true)[0];
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
-            this.item_Dao.delete_item((int)startingBalanceRow.Cells[0].Value);
+
+
+            if (Category_combobox.SelectedIndex == item_index)
+            {
+                this.item_Dao.delete_item((int)startingBalanceRow.Cells[this.item_Dao.get_id_column_number()].Value);
+
+            }
+
+            else if (Category_combobox.SelectedIndex == headphone_index)
+            {
+                this.headphohe_Dao.delete_item((int)startingBalanceRow.Cells[this.headphohe_Dao.get_id_column_number()].Value);
+            }
+            else
+            {
+                this.item_Dao.delete_item((int)startingBalanceRow.Cells[this.item_Dao.get_id_column_number()].Value);
+            }
+          
+                
+           
+
+            
+
             show_button_Click(sender, e);
         }
 

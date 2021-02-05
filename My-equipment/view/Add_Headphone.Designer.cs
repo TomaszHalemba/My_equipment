@@ -217,13 +217,13 @@ namespace My_equipment.view
             this.Controls.Add(this.item_name_label);
             this.Controls.Add(this.dateTime_retired_picker);
             this.Controls.Add(this.dateTime_bought_picker);
-            this.Controls.Add(this.add_headphone_button);
             this.Controls.Add(this.description_textbox);
             this.Controls.Add(this.rating_textbox);
             this.Controls.Add(this.company_name_textbox);
             this.Controls.Add(this.price_textbox);
             this.Controls.Add(this.item_name_textbox);
             this.Controls.Add(this.modify_item_button);
+            this.Controls.Add(this.add_headphone_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Add_Headphone";
             this.ResumeLayout(false);

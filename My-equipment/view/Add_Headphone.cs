@@ -62,15 +62,17 @@ namespace My_equipment.view
         {
             InitializeComponent();
             this.mode = mode;
+            add_headphone_button.Visible = false;
+            modify_item_button.Visible = false;
 
             if (mode == 0)
             {
-                add_headphone_button.Text = "Add item";
+                add_headphone_button.Visible = true;
             }
             else
             if (mode == 1)
             {
-                add_headphone_button.Text = "Modify item";
+                modify_item_button.Visible = true;
                 set_values(item);
             }
         }
@@ -88,7 +90,7 @@ namespace My_equipment.view
             bool volume_setter = volume_setter_checkbox.Checked;
             bool mute_button = mute_button_checkbox.Checked;
 
-            return new Headphone(new Item(item_name, item_bought, item_retired, price, description, company_name, rating), cable_lenght, microphone, volume_setter, mute_button);
+            return new Headphone(new Item(item_name, item_bought, item_retired, price, description, company_name, rating,this.item_id), cable_lenght, microphone, volume_setter, mute_button);
         }
 
         private void add_headphone_button_Click(object sender, EventArgs e)

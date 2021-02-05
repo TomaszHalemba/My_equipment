@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    class Headphohe_dao : Item_interface<Headphone>
+    class Headphohe_dao : Item_interface<Headphone>,Form_interface<Headphone>
     {
         controler.Database_controller database_Controller;
 
@@ -17,9 +17,15 @@ namespace My_equipment.dao
         {
             database_Controller = new controler.Database_controller();
         }
-        private string parseFloatToSql(float value)
+        private string parse_float_to_sql(float value)
         {
             return value.ToString().Replace(",", ".");
+        }
+        private int parse_bool_to_sql(bool value)
+        {
+            if (value == true)
+                return 1;
+            return 0;
         }
         private int bool_to_int(bool value)
         {
@@ -32,16 +38,16 @@ namespace My_equipment.dao
                 item.item_name + "','" +
                 item.item_bought.ToString("yyyy-MM-dd") + "','" +
                 item.item_retired.ToString("yyyy-MM-dd") + "'," +
-                parseFloatToSql(item.price) + ",'" +
+                parse_float_to_sql(item.price) + ",'" +
                 item.description + "','" +
                 item.company_name + "'," +
-                parseFloatToSql(item.rating) + ") ";
+                parse_float_to_sql(item.rating) + ") ";
 
             int item_id = database_Controller.insert_create_delete_return_id(querry);
 
             querry = "insert into Headphones(id,cable_lenght,microphone,volume_setter,mute_button) OUTPUT INSERTED.ID values(" +
                 item_id.ToString()+","+
-                parseFloatToSql(item.cable_lenght) + "," +
+                parse_float_to_sql(item.cable_lenght) + "," +
                bool_to_int(item.microphone) + "," +
                 bool_to_int(item.volume_setter) + "," +
                 bool_to_int(item.mute_button) + ")";
@@ -58,7 +64,10 @@ namespace My_equipment.dao
 
         public void delete_item(int id)
         {
-            throw new NotImplementedException();
+            string querry;
+            querry = "delete from items where id = " + id.ToString();
+
+            database_Controller.insert_create_delete(querry);
         }
 
         public string[] get_header_names(int value)
@@ -199,12 +208,64 @@ namespace My_equipment.dao
 
         public Headphone get_item_from_row(DataGridViewRow row)
         {
-            throw new NotImplementedException();
+
+            int id =(int) row.Cells[4].Value;
+            float cable_lenght = (float)row.Cells[0].Value; 
+            bool microphone = (bool)row.Cells[1].Value;
+            bool volume_setter = (bool)row.Cells[2].Value;
+            bool mute_button = (bool)row.Cells[3].Value;
+            string item_name = (string)row.Cells[5].Value;
+            DateTime item_bought =(DateTime) row.Cells[6].Value;
+            DateTime item_retired = (DateTime)row.Cells[7].Value;
+            float price = (float)row.Cells[8].Value;
+            string company_name = (string)row.Cells[9].Value;
+            float rating = (float)row.Cells[10].Value;
+            string description = (string)row.Cells[11].Value;
+            
+            
+
+
+
+            return new Headphone(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id), cable_lenght, microphone, volume_setter, mute_button);
+
         }
 
         public void update_item(Headphone item)
         {
-            throw new NotImplementedException();
+            string querry;
+            querry = "update items set item_name='" +
+                item.item_name + "',item_bought='" +
+                item.item_bought.ToString("yyyy-MM-dd") + "',item_retired='" +
+                item.item_retired.ToString("yyyy-MM-dd") + "',price=" +
+                parse_float_to_sql(item.price) + ",description='" +
+                item.description + "',company_name='" +
+                item.company_name + "',rating=" +
+                parse_float_to_sql(item.rating) +
+                " where id = " + item.id;
+
+            database_Controller.insert_create_delete(querry);
+
+
+
+                querry = "update headphones set cable_lenght=" +
+                parse_float_to_sql(item.cable_lenght) + ",microphone=" +
+                parse_bool_to_sql(item.microphone) + ",volume_setter=" +
+                parse_bool_to_sql(item.volume_setter) + ",mute_button=" +
+                parse_bool_to_sql(item.mute_button) + 
+                " where id = " + item.id;
+
+            database_Controller.insert_create_delete(querry);
+
+
+
+
+
+
+
+        }
+        public int get_id_column_number()
+        {
+            return 4;
         }
     }
 }

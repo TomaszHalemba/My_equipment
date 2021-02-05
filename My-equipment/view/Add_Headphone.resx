@@ -426,7 +426,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;add_headphone_button.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>24</value>
   </data>
   <data name="description_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 168</value>
@@ -450,7 +450,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;description_textbox.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="rating_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 142</value>
@@ -471,7 +471,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rating_textbox.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="company_name_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 115</value>
@@ -492,7 +492,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;company_name_textbox.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="price_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 89</value>
@@ -513,7 +513,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;price_textbox.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="item_name_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 9</value>
@@ -534,7 +534,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;item_name_textbox.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="cable_lenght_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -745,7 +745,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;modify_item_button.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

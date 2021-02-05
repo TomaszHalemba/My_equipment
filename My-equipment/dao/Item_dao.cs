@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    class Item_dao : interfaces.Item_interface<Item>
+    class Item_dao : interfaces.Item_interface<Item>,interfaces.Form_interface<Item>
     {
         controler.Database_controller database_Controller;
 
@@ -29,7 +29,7 @@ namespace My_equipment.dao
                 item.company_name + "'," +
                 parseFloatToSql(item.rating) + ") ";
 
-            database_Controller.insert_create_delete_return_id(querry);
+            database_Controller.insert_create_delete(querry);
 
         }
 
@@ -125,7 +125,7 @@ namespace My_equipment.dao
             string querry;
             querry = "delete from items where id = " + id.ToString();
 
-            database_Controller.insert_create_delete_return_id(querry);
+            database_Controller.insert_create_delete(querry);
         }
 
         public void update_item(Item item)
@@ -141,7 +141,7 @@ namespace My_equipment.dao
                 parseFloatToSql(item.rating) +
                 " where id = " + item.id;
 
-            database_Controller.insert_create_delete_return_id(querry);
+            database_Controller.insert_create_delete(querry);
         }
 
         public string[] get_header_names(int value)
@@ -184,6 +184,11 @@ namespace My_equipment.dao
 
             }
             return names;
+        }
+
+        public int get_id_column_number()
+        {
+            return 0;
         }
     }
 }
