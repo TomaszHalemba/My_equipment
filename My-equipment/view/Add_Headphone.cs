@@ -46,8 +46,25 @@ namespace My_equipment.view
         {
             item_id = headphone.id;
             item_name_textbox.Text = headphone.item_name;
-            dateTime_bought_picker.Value = headphone.item_bought;
-            dateTime_retired_picker.Value = headphone.item_retired;
+            if (headphone.item_bought == DateTime.MinValue)
+            {
+                bought_date_checkbox.Checked = true;
+            }
+            else
+            {
+                dateTime_bought_picker.Value = headphone.item_bought;
+                bought_date_checkbox.Checked = false;
+            }
+
+            if (headphone.item_retired == DateTime.MinValue)
+            {
+                retired_checkbox.Checked = true;
+            }
+            else
+            {
+                dateTime_retired_picker.Value = headphone.item_retired;
+                retired_checkbox.Checked = false;
+            }
             price_textbox.Text = headphone.price.ToString();
             description_textbox.Text = headphone.description;
             company_name_textbox.Text = headphone.company_name;
@@ -79,8 +96,17 @@ namespace My_equipment.view
         private Headphone Get_headphone_from_form()
         {
             string item_name = item_name_textbox.Text;
-            DateTime item_bought = dateTime_bought_picker.Value;
-            DateTime item_retired = dateTime_retired_picker.Value;
+            DateTime item_bought = new DateTime();
+            DateTime item_retired = new DateTime();
+            if (!retired_checkbox.Checked)
+            {
+                item_retired = dateTime_retired_picker.Value;
+            }
+            if (!bought_date_checkbox.Checked)
+            {
+                item_bought = dateTime_bought_picker.Value;
+            }
+
             float price = float.Parse(price_textbox.Text);
             string description = description_textbox.Text;
             string company_name = company_name_textbox.Text;
