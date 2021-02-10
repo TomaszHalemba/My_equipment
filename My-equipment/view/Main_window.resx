@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="show_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 12</value>
+    <value>55, 30</value>
   </data>
   <data name="show_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -141,13 +141,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;show_button.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 1</value>
+    <value>136, 30</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1052, 448</value>
+    <value>1052, 419</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -162,10 +162,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="add_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 41</value>
+    <value>55, 59</value>
   </data>
   <data name="add_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -186,10 +186,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;add_button.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="modify_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 71</value>
+    <value>55, 88</value>
   </data>
   <data name="modify_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -210,10 +210,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;modify_button.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="delete_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 101</value>
+    <value>55, 117</value>
   </data>
   <data name="delete_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -234,7 +234,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;delete_button.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="Category_combobox.Items" xml:space="preserve">
     <value>Items</value>
@@ -243,7 +243,7 @@
     <value>Headphones</value>
   </data>
   <data name="Category_combobox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 130</value>
+    <value>9, 146</value>
   </data>
   <data name="Category_combobox.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -261,31 +261,58 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Category_combobox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="Create_database_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 415</value>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="Create_database_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 23</value>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1191, 27</value>
   </data>
-  <data name="Create_database_button.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="Create_database_button.Text" xml:space="preserve">
-    <value>Create database</value>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;Create_database_button.Name" xml:space="preserve">
-    <value>Create_database_button</value>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;Create_database_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Create_database_button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Create_database_button.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="databaseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 23</value>
+  </data>
+  <data name="databaseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="createToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="exportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="exportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -298,6 +325,30 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>My equipment</value>
+  </data>
+  <data name="&gt;&gt;databaseToolStripMenuItem.Name" xml:space="preserve">
+    <value>databaseToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;databaseToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createToolStripMenuItem.Name" xml:space="preserve">
+    <value>createToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;createToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportToolStripMenuItem.Name" xml:space="preserve">
+    <value>exportToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exportToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importToolStripMenuItem.Name" xml:space="preserve">
+    <value>importToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;importToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

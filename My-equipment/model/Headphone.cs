@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace My_equipment.model
 {
-    public class Headphone :  Item
+    public class Headphone : Item
     {
         public float cable_lenght { get; set; }
         public bool microphone { get; set; }
         public bool volume_setter { get; set; }
         public bool mute_button { get; set; }
 
-       
+
         public Headphone(Item item) : base(item)
         {
             this.cable_lenght = 0;
@@ -28,12 +28,40 @@ namespace My_equipment.model
             this.volume_setter = volume_setter;
             this.mute_button = mute_button;
         }
-        public Headphone(float cable_lenght, bool microphone, bool volume_setter, bool mute_button):base()
+        public Headphone(float cable_lenght, bool microphone, bool volume_setter, bool mute_button) : base()
         {
             this.cable_lenght = cable_lenght;
             this.microphone = microphone;
             this.volume_setter = volume_setter;
             this.mute_button = mute_button;
         }
+
+        public Headphone(string line)
+        {
+            string[] values = line.Split(';');
+            this.id = int.Parse(values[0]);
+            this.item_name = values[1];
+            this.item_bought = Convert.ToDateTime(values[2]);
+            this.item_retired = Convert.ToDateTime(values[3]);
+            this.price = float.Parse(values[4]);
+            this.description = values[5];
+            this.company_name = values[6];
+            this.rating = float.Parse(values[7]);
+
+            this.price = float.Parse(values[8]);
+            this.microphone = Convert.ToBoolean(values[9]);
+            this.volume_setter = Convert.ToBoolean(values[10]);
+            this.mute_button = Convert.ToBoolean(values[11]);
+        }
+
+
+
+        public override string to_csv()
+        {
+            Item item = new Item((Item)this);
+
+            return item.to_csv() + ";" + cable_lenght.ToString() + ";" + microphone.ToString() + ";" + volume_setter.ToString() + ";" + mute_button.ToString();
+        }
     }
+
 }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    class Headphohe_dao : Item_interface<Headphone>,Form_interface<Headphone>
+    class Headphohe_dao : Item_interface<Headphone>, Form_interface<Headphone>
     {
         controler.Database_controller database_Controller;
 
@@ -46,7 +46,7 @@ namespace My_equipment.dao
             int item_id = database_Controller.insert_create_delete_return_id(querry);
 
             querry = "insert into Headphones(id,cable_lenght,microphone,volume_setter,mute_button) OUTPUT INSERTED.ID values(" +
-                item_id.ToString()+","+
+                item_id.ToString() + "," +
                 parse_float_to_sql(item.cable_lenght) + "," +
                bool_to_int(item.microphone) + "," +
                 bool_to_int(item.volume_setter) + "," +
@@ -124,11 +124,11 @@ namespace My_equipment.dao
             return names;
         }
 
-        public List<Headphone> get_items()
+        public List<Headphone> get_items(string querry = "select i.id,i.item_name,i.item_bought,i.item_retired," +
+            "i.price,i.description,i.company_name,i.rating ,h.cable_lenght,h.microphone,h.volume_setter,h.mute_button from Headphones as h inner join items as i on i.id=h.id")
         {
             List<Headphone> headphones = new List<Headphone>();
-            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select("select i.id,i.item_name,i.item_bought,i.item_retired," +
-            "i.price,i.description,i.company_name,i.rating ,h.cable_lenght,h.microphone,h.volume_setter,h.mute_button from Headphones as h inner join items as i on i.id=h.id");
+            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select(querry);
 
             int id = 0;
             float cable_lenght = 0;
@@ -143,10 +143,10 @@ namespace My_equipment.dao
             string company_name = "";
             float rating = 0;
 
-            
+
             while (dreader.Read())
             {
-                
+
 
 
                 if (dreader.IsDBNull(0) == false)
@@ -198,7 +198,7 @@ namespace My_equipment.dao
                 {
                     mute_button = (bool)dreader.GetSqlBoolean(11);
                 }
-                headphones.Add(new Headphone(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id),cable_lenght, microphone, volume_setter, mute_button));
+                headphones.Add(new Headphone(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id), cable_lenght, microphone, volume_setter, mute_button));
             }
             database_Controller.disconnect();
 
@@ -209,20 +209,20 @@ namespace My_equipment.dao
         public Headphone get_item_from_row(DataGridViewRow row)
         {
 
-            int id =(int) row.Cells[4].Value;
-            float cable_lenght = (float)row.Cells[0].Value; 
+            int id = (int)row.Cells[4].Value;
+            float cable_lenght = (float)row.Cells[0].Value;
             bool microphone = (bool)row.Cells[1].Value;
             bool volume_setter = (bool)row.Cells[2].Value;
             bool mute_button = (bool)row.Cells[3].Value;
             string item_name = (string)row.Cells[5].Value;
-            DateTime item_bought =(DateTime) row.Cells[6].Value;
+            DateTime item_bought = (DateTime)row.Cells[6].Value;
             DateTime item_retired = (DateTime)row.Cells[7].Value;
             float price = (float)row.Cells[8].Value;
             string company_name = (string)row.Cells[9].Value;
             float rating = (float)row.Cells[10].Value;
             string description = (string)row.Cells[11].Value;
-            
-            
+
+
 
 
 
@@ -247,12 +247,12 @@ namespace My_equipment.dao
 
 
 
-                querry = "update headphones set cable_lenght=" +
-                parse_float_to_sql(item.cable_lenght) + ",microphone=" +
-                parse_bool_to_sql(item.microphone) + ",volume_setter=" +
-                parse_bool_to_sql(item.volume_setter) + ",mute_button=" +
-                parse_bool_to_sql(item.mute_button) + 
-                " where id = " + item.id;
+            querry = "update headphones set cable_lenght=" +
+            parse_float_to_sql(item.cable_lenght) + ",microphone=" +
+            parse_bool_to_sql(item.microphone) + ",volume_setter=" +
+            parse_bool_to_sql(item.volume_setter) + ",mute_button=" +
+            parse_bool_to_sql(item.mute_button) +
+            " where id = " + item.id;
 
             database_Controller.insert_create_delete(querry);
 

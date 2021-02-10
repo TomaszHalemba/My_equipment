@@ -90,9 +90,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controler\Database_controller.cs" />
+    <Compile Include="controler\Import_export_database.cs" />
     <Compile Include="dao\Headphohe_dao.cs" />
     <Compile Include="dao\Item_dao.cs" />
     <Compile Include="interfaces\Form_interface.cs" />
+    <Compile Include="resources\en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="view\Main_window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +133,14 @@
     <Compile Include="view\Item_views.Designer.cs">
       <DependentUpon>Item_views.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="resources\en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Main_window.resx">
       <DependentUpon>Main_window.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +189,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

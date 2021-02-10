@@ -33,7 +33,6 @@ namespace My_equipment.view
             this.item_name_textbox = new System.Windows.Forms.TextBox();
             this.price_textbox = new System.Windows.Forms.TextBox();
             this.description_textbox = new System.Windows.Forms.TextBox();
-            this.rating_textbox = new System.Windows.Forms.TextBox();
             this.company_name_textbox = new System.Windows.Forms.TextBox();
             this.add_item_button = new System.Windows.Forms.Button();
             this.dateTime_bought_picker = new System.Windows.Forms.DateTimePicker();
@@ -48,6 +47,8 @@ namespace My_equipment.view
             this.bought_date_checkbox = new System.Windows.Forms.CheckBox();
             this.retired_checkbox = new System.Windows.Forms.CheckBox();
             this.modify_button = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rating_textbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // item_name_textbox
@@ -64,11 +65,6 @@ namespace My_equipment.view
             // 
             resources.ApplyResources(this.description_textbox, "description_textbox");
             this.description_textbox.Name = "description_textbox";
-            // 
-            // rating_textbox
-            // 
-            resources.ApplyResources(this.rating_textbox, "rating_textbox");
-            this.rating_textbox.Name = "rating_textbox";
             // 
             // company_name_textbox
             // 
@@ -150,10 +146,22 @@ namespace My_equipment.view
             this.modify_button.UseVisualStyleBackColor = true;
             this.modify_button.Click += new System.EventHandler(this.Modify_button_Click);
             // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // rating_textbox
+            // 
+            resources.ApplyResources(this.rating_textbox, "rating_textbox");
+            this.rating_textbox.Name = "rating_textbox";
+            // 
             // Add_Item
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.rating_textbox);
             this.Controls.Add(this.retired_checkbox);
             this.Controls.Add(this.bought_date_checkbox);
             this.Controls.Add(this.description_label);
@@ -166,7 +174,6 @@ namespace My_equipment.view
             this.Controls.Add(this.dateTime_retired_picker);
             this.Controls.Add(this.dateTime_bought_picker);
             this.Controls.Add(this.description_textbox);
-            this.Controls.Add(this.rating_textbox);
             this.Controls.Add(this.company_name_textbox);
             this.Controls.Add(this.price_textbox);
             this.Controls.Add(this.item_name_textbox);
@@ -184,7 +191,6 @@ namespace My_equipment.view
         private System.Windows.Forms.TextBox item_name_textbox;
         private System.Windows.Forms.TextBox price_textbox;
         private System.Windows.Forms.TextBox description_textbox;
-        private System.Windows.Forms.TextBox rating_textbox;
         private System.Windows.Forms.TextBox company_name_textbox;
         private System.Windows.Forms.Button add_item_button;
         private System.Windows.Forms.DateTimePicker dateTime_bought_picker;
@@ -199,5 +205,7 @@ namespace My_equipment.view
         private System.Windows.Forms.CheckBox bought_date_checkbox;
         private System.Windows.Forms.CheckBox retired_checkbox;
         private System.Windows.Forms.Button modify_button;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox rating_textbox;
     }
 }

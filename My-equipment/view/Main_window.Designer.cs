@@ -36,7 +36,12 @@ namespace My_equipment
             this.modify_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.Category_combobox = new System.Windows.Forms.ComboBox();
-            this.Create_database_button = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // show_button
@@ -82,27 +87,60 @@ namespace My_equipment
             resources.GetString("Category_combobox.Items1")});
             resources.ApplyResources(this.Category_combobox, "Category_combobox");
             this.Category_combobox.Name = "Category_combobox";
+            this.Category_combobox.SelectedIndexChanged += new System.EventHandler(this.Category_combobox_SelectedIndexChanged);
             // 
-            // Create_database_button
+            // menuStrip1
             // 
-            resources.ApplyResources(this.Create_database_button, "Create_database_button");
-            this.Create_database_button.Name = "Create_database_button";
-            this.Create_database_button.UseVisualStyleBackColor = true;
-            this.Create_database_button.Click += new System.EventHandler(this.Create_database_button_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem,
+            this.exportToolStripMenuItem,
+            this.importToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            resources.ApplyResources(this.databaseToolStripMenuItem, "databaseToolStripMenuItem");
+            // 
+            // createToolStripMenuItem
+            // 
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Create_database_button);
             this.Controls.Add(this.Category_combobox);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.modify_button);
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.show_button);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,7 +152,11 @@ namespace My_equipment
         private System.Windows.Forms.Button modify_button;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.ComboBox Category_combobox;
-        private System.Windows.Forms.Button Create_database_button;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
     }
 }
 

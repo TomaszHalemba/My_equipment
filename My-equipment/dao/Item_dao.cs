@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    class Item_dao : interfaces.Item_interface<Item>,interfaces.Form_interface<Item>
+    class Item_dao : interfaces.Item_interface<Item>, interfaces.Form_interface<Item>
     {
         controler.Database_controller database_Controller;
 
@@ -16,7 +16,7 @@ namespace My_equipment.dao
         {
             return value.ToString().Replace(",", ".");
         }
-       
+
         public void add_item(Item item)
         {
             string querry;
@@ -38,14 +38,21 @@ namespace My_equipment.dao
             throw new NotImplementedException();
         }
 
-        public List<Item> get_items()
+        public List<Item> get_items_only()
+        {
+            return this.get_items("select item_name, item_bought, item_retired," +
+                "price,description,company_name,rating,id from items" +
+                " where id not in (select id from headphones)");
+        }
+
+        public List<Item> get_items(string querry = "select item_name, item_bought, item_retired," +
+                "price,description,company_name,rating,id from items")
         {
             List<Item> items = new List<Item>();
-            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select("select item_name,item_bought,item_retired," +
-                "price,description,company_name,rating,id from items");
+            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select(querry);
 
 
-            // for one by one reading row 
+
             while (dreader.Read())
             {
 
@@ -108,7 +115,7 @@ namespace My_equipment.dao
             string company_name = (string)row.Cells[5].Value;
             float rating = (float)row.Cells[6].Value;
             string description = (string)row.Cells[7].Value;
-            return new Item(item_name, item_bought, item_retired, price, description, company_name, rating,id);
+            return new Item(item_name, item_bought, item_retired, price, description, company_name, rating, id);
 
 
         }

@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;item_name_textbox.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="price_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 89</value>
@@ -159,7 +159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;price_textbox.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="description_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 168</value>
@@ -183,28 +183,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;description_textbox.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="rating_textbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 142</value>
-  </data>
-  <data name="rating_textbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="rating_textbox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;rating_textbox.Name" xml:space="preserve">
-    <value>rating_textbox</value>
-  </data>
-  <data name="&gt;&gt;rating_textbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rating_textbox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;rating_textbox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="company_name_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 115</value>
@@ -225,7 +204,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;company_name_textbox.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="add_item_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 270</value>
@@ -249,7 +228,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;add_item_button.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="dateTime_bought_picker.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 36</value>
@@ -270,7 +249,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dateTime_bought_picker.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="dateTime_retired_picker.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 62</value>
@@ -291,7 +270,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dateTime_retired_picker.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="item_name_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -318,7 +297,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;item_name_label.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="bought_date_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -345,7 +324,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bought_date_label.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="price_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -372,7 +351,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;price_label.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="item_retired_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -399,7 +378,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;item_retired_label.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="description_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -426,7 +405,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;description_label.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="rating_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -453,7 +432,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rating_label.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="company_name_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -480,7 +459,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;company_name_label.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="bought_date_checkbox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -507,7 +486,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bought_date_checkbox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="retired_checkbox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -534,7 +513,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;retired_checkbox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="modify_button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -562,7 +541,58 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;modify_button.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 145</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 15</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>/10</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rating_textbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 142</value>
+  </data>
+  <data name="rating_textbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="rating_textbox.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.Name" xml:space="preserve">
+    <value>rating_textbox</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rating_textbox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

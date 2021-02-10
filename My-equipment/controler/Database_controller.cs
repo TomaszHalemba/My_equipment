@@ -76,5 +76,6 @@ namespace My_equipment.controler
             SqlDataReader dreader = cmd.ExecuteReader();
             return dreader;
         }
+
     }
 }
