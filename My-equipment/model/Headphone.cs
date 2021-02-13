@@ -8,11 +8,19 @@ namespace My_equipment.model
 {
     public class Headphone : Item
     {
-        public float cable_lenght { get; set; }
-        public bool microphone { get; set; }
-        public bool volume_setter { get; set; }
-        public bool mute_button { get; set; }
+        public virtual float cable_lenght { get; set; }
+        public virtual bool microphone { get; set; }
+        public virtual bool volume_setter { get; set; }
+        public virtual bool mute_button { get; set; }
 
+
+        public Headphone() : base()
+        {
+            cable_lenght = 0;
+            microphone = false;
+            volume_setter = false;
+            mute_button = false;
+        }
 
         public Headphone(Item item) : base(item)
         {

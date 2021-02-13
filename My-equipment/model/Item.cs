@@ -9,17 +9,17 @@ namespace My_equipment.model
     public class Item
     {
 
-        public int id { get; set; }
-        public string item_name { get; set; }
-        public DateTime item_bought { get; set; }
-        public DateTime item_retired { get; set; }
-        public float price { get; set; }
+        public virtual int id { get; set; }
+        public virtual string item_name { get; set; }
+        public virtual DateTime item_bought { get; set; }
+        public virtual DateTime item_retired { get; set; }
+        public virtual float price { get; set; }
 
-        public string company_name { get; set; }
+        public virtual string company_name { get; set; }
 
-        public float rating { get; set; }
+        public virtual float rating { get; set; }
 
-        public string description { get; set; }
+        public virtual string description { get; set; }
 
         public Item()
         {
@@ -59,7 +59,7 @@ namespace My_equipment.model
 
         }
 
-        public void setItemValues(Item item)
+        public virtual void setItemValues(Item item)
         {
             this.item_name = item.item_name;
             this.item_bought = item.item_bought;

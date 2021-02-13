@@ -11,7 +11,7 @@ namespace My_equipment.interfaces
     interface Item_interface<Class_type>
     {
 
-        List<Class_type> get_items(string querry = "");
+        List<Class_type> get_items();
         void add_item(Class_type item);
         void delete_item(Class_type item);
         void delete_item(int id);

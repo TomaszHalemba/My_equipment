@@ -14,30 +14,41 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FluentNHibernate;
+using NHibernate;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 
 namespace My_equipment
 {
     public partial class Form1 : Form
     {
-        
+
         DataGridView panel;
         Item_dao item_Dao = new Item_dao();
         Headphohe_dao headphohe_Dao = new Headphohe_dao();
         Import_export_database import_Export_Database = new Import_export_database();
-        ResourceManager resource_manager = new ResourceManager("My_equipment.resources.en",Assembly.GetExecutingAssembly());
-       
+        ResourceManager resource_manager = new ResourceManager("My_equipment.resources.en", Assembly.GetExecutingAssembly());
+
 
         private readonly int item_index = 0;
         private readonly int headphone_index = 1;
         private int current_show_index = 0;
 
 
+
+      
+
         public Form1()
         {
             InitializeComponent();
             Category_combobox.SelectedIndex = 0;
-    
+
             
+
+
+
+
 
 
         }
@@ -67,6 +78,13 @@ namespace My_equipment
 
         private void add_button_Click(object sender, EventArgs e)
         {
+
+
+
+
+
+
+
             current_show_index = Category_combobox.SelectedIndex;
             if (current_show_index == item_index)
             {

@@ -1,15 +1,20 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
+using Microsoft.Data.SqlClient;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using My_equipment.model;
 
 namespace My_equipment.controler
 {
     class Database_controller
     {
         SqlConnection sqlConnection;
+        public ISessionFactory sessionFactory;
 
         public void createDatabase()
         {
@@ -60,11 +65,30 @@ namespace My_equipment.controler
             sqlConnection.Close();
         }
 
+        private static ISessionFactory CreateSessionFactory()
+        {
+
+            return Fluently.Configure()
+           .Database(
+               MsSqlConfiguration.MsSql2012.ConnectionString(@"Server=(localdb)\MSSQLLocalDB;Database=my_equipment;Integrated Security=true;")
+              )
+              .Mappings(m =>
+                m.FluentMappings.AddFromAssemblyOf<Item>()
+                )
+              .BuildSessionFactory();
+        }
+
+
         public Database_controller()
         {
             string connetionString;
             connetionString = @"Server=(localdb)\MSSQLLocalDB;Database=my_equipment;Integrated Security=true;";
             sqlConnection = new SqlConnection(connetionString);
+
+
+            sessionFactory = CreateSessionFactory();
+
+           
         }
 
         public SqlDataReader select(string querry)

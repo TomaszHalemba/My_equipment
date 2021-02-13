@@ -33,25 +33,18 @@ namespace My_equipment.dao
         }
         public void add_item(Headphone item)
         {
-            string querry;
-            querry = "insert into items(item_name , item_bought ,item_retired ,price ,description,company_name,rating) OUTPUT INSERTED.ID values('" +
-                item.item_name + "','" +
-                item.item_bought.ToString("yyyy-MM-dd") + "','" +
-                item.item_retired.ToString("yyyy-MM-dd") + "'," +
-                parse_float_to_sql(item.price) + ",'" +
-                item.description + "','" +
-                item.company_name + "'," +
-                parse_float_to_sql(item.rating) + ") ";
 
-            int item_id = database_Controller.insert_create_delete_return_id(querry);
 
-            querry = "insert into Headphones(id,cable_lenght,microphone,volume_setter,mute_button) OUTPUT INSERTED.ID values(" +
-                item_id.ToString() + "," +
-                parse_float_to_sql(item.cable_lenght) + "," +
-               bool_to_int(item.microphone) + "," +
-                bool_to_int(item.volume_setter) + "," +
-                bool_to_int(item.mute_button) + ")";
-            int headphone_id = database_Controller.insert_create_delete_return_id(querry);
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Save(item);
+                    transaction.Commit();
+                }
+            }
 
 
 
@@ -59,15 +52,35 @@ namespace My_equipment.dao
 
         public void delete_item(Headphone item)
         {
-            throw new NotImplementedException();
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+
+                session.Delete(item);
+                session.Flush();
+
+            }
         }
 
         public void delete_item(int id)
         {
-            string querry;
-            querry = "delete from items where id = " + id.ToString();
 
-            database_Controller.insert_create_delete(querry);
+
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    var queryString = string.Format("delete Item where id = :id");
+                    session.CreateQuery(queryString)
+                           .SetParameter("id", id)
+                           .ExecuteUpdate();
+
+                    transaction.Commit();
+                }
+
+
+            }
         }
 
         public string[] get_header_names(int value)
@@ -124,83 +137,21 @@ namespace My_equipment.dao
             return names;
         }
 
-        public List<Headphone> get_items(string querry = "select i.id,i.item_name,i.item_bought,i.item_retired," +
-            "i.price,i.description,i.company_name,i.rating ,h.cable_lenght,h.microphone,h.volume_setter,h.mute_button from Headphones as h inner join items as i on i.id=h.id")
+        public List<Headphone> get_items()
         {
             List<Headphone> headphones = new List<Headphone>();
-            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select(querry);
-
-            int id = 0;
-            float cable_lenght = 0;
-            bool microphone = false;
-            bool volume_setter = false;
-            bool mute_button = false;
-            string item_name = "";
-            DateTime item_bought = new DateTime();
-            DateTime item_retired = new DateTime();
-            float price = 0;
-            string description = "";
-            string company_name = "";
-            float rating = 0;
 
 
-            while (dreader.Read())
+            using (var session = database_Controller.sessionFactory.OpenSession())
             {
 
 
-
-                if (dreader.IsDBNull(0) == false)
+                using (session.BeginTransaction())
                 {
-                    id = dreader.GetInt32(0);
-
+                    headphones = (List<Headphone>)session.CreateCriteria(typeof(Headphone))
+                      .List<Headphone>();
                 }
-                if (dreader.IsDBNull(1) == false)
-                {
-                    item_name = (string)dreader.GetValue(1);
-                }
-                if (dreader.IsDBNull(2) == false)
-                {
-                    item_bought = dreader.GetDateTime(2);
-                }
-                if (dreader.IsDBNull(3) == false)
-                {
-                    item_retired = dreader.GetDateTime(3);
-                }
-                if (dreader.IsDBNull(4) == false)
-                {
-                    price = (float)dreader.GetDouble(4);
-                }
-                if (dreader.IsDBNull(5) == false)
-                {
-                    description = (string)dreader.GetValue(5);
-                }
-                if (dreader.IsDBNull(6) == false)
-                {
-                    company_name = (string)dreader.GetValue(6);
-                }
-                if (dreader.IsDBNull(7) == false)
-                {
-                    rating = (float)dreader.GetDouble(7);
-                }
-                if (dreader.IsDBNull(8) == false)
-                {
-                    cable_lenght = (float)dreader.GetDouble(8);
-                }
-                if (dreader.IsDBNull(9) == false)
-                {
-                    microphone = (bool)dreader.GetSqlBoolean(9);
-                }
-                if (dreader.IsDBNull(10) == false)
-                {
-                    volume_setter = (bool)dreader.GetSqlBoolean(10);
-                }
-                if (dreader.IsDBNull(11) == false)
-                {
-                    mute_button = (bool)dreader.GetSqlBoolean(11);
-                }
-                headphones.Add(new Headphone(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id), cable_lenght, microphone, volume_setter, mute_button));
             }
-            database_Controller.disconnect();
 
 
             return headphones;
@@ -232,29 +183,39 @@ namespace My_equipment.dao
 
         public void update_item(Headphone item)
         {
-            string querry;
-            querry = "update items set item_name='" +
-                item.item_name + "',item_bought='" +
-                item.item_bought.ToString("yyyy-MM-dd") + "',item_retired='" +
-                item.item_retired.ToString("yyyy-MM-dd") + "',price=" +
-                parse_float_to_sql(item.price) + ",description='" +
-                item.description + "',company_name='" +
-                item.company_name + "',rating=" +
-                parse_float_to_sql(item.rating) +
-                " where id = " + item.id;
+            //string querry;
+            //querry = "update items set item_name='" +
+            //    item.item_name + "',item_bought='" +
+            //    item.item_bought.ToString("yyyy-MM-dd") + "',item_retired='" +
+            //    item.item_retired.ToString("yyyy-MM-dd") + "',price=" +
+            //    parse_float_to_sql(item.price) + ",description='" +
+            //    item.description + "',company_name='" +
+            //    item.company_name + "',rating=" +
+            //    parse_float_to_sql(item.rating) +
+            //    " where id = " + item.id;
 
-            database_Controller.insert_create_delete(querry);
+            //database_Controller.insert_create_delete(querry);
 
 
 
-            querry = "update headphones set cable_lenght=" +
-            parse_float_to_sql(item.cable_lenght) + ",microphone=" +
-            parse_bool_to_sql(item.microphone) + ",volume_setter=" +
-            parse_bool_to_sql(item.volume_setter) + ",mute_button=" +
-            parse_bool_to_sql(item.mute_button) +
-            " where id = " + item.id;
+            //querry = "update headphones set cable_lenght=" +
+            //parse_float_to_sql(item.cable_lenght) + ",microphone=" +
+            //parse_bool_to_sql(item.microphone) + ",volume_setter=" +
+            //parse_bool_to_sql(item.volume_setter) + ",mute_button=" +
+            //parse_bool_to_sql(item.mute_button) +
+            //" where id = " + item.id;
 
-            database_Controller.insert_create_delete(querry);
+            //database_Controller.insert_create_delete(querry);
+
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(item);
+                    transaction.Commit();
+                }
+;
+            }
 
 
 

@@ -1,4 +1,5 @@
 ﻿using My_equipment.model;
+using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace My_equipment.dao
     {
         controler.Database_controller database_Controller;
 
+
+
         private string parseFloatToSql(float value)
         {
             return value.ToString().Replace(",", ".");
@@ -19,88 +22,69 @@ namespace My_equipment.dao
 
         public void add_item(Item item)
         {
-            string querry;
-            querry = "insert into items(item_name , item_bought ,item_retired ,price ,description,company_name,rating) OUTPUT INSERTED.ID values('" +
-                item.item_name + "','" +
-                item.item_bought.ToString("yyyy-MM-dd") + "','" +
-                item.item_retired.ToString("yyyy-MM-dd") + "'," +
-                parseFloatToSql(item.price) + ",'" +
-                item.description + "','" +
-                item.company_name + "'," +
-                parseFloatToSql(item.rating) + ") ";
 
-            database_Controller.insert_create_delete(querry);
+
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Save(item);
+                    transaction.Commit();
+                }
+            }
+
 
         }
 
         public void delete_item(Item item)
         {
-            throw new NotImplementedException();
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+              
+                session.Delete(item);
+                session.Flush();
+
+            }
         }
 
         public List<Item> get_items_only()
         {
-            return this.get_items("select item_name, item_bought, item_retired," +
-                "price,description,company_name,rating,id from items" +
-                " where id not in (select id from headphones)");
+            List<Item> items = new List<Item>();
+
+
+
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+                items = session.Query<Item>()
+        .Where(c=> !(session.Query<Headphone>().Select(x => x.id)).Contains(c.id)  )
+        .ToList();
+
+
+            }
+
+
+            return items;
+
         }
 
-        public List<Item> get_items(string querry = "select item_name, item_bought, item_retired," +
-                "price,description,company_name,rating,id from items")
+        public List<Item> get_items()
         {
             List<Item> items = new List<Item>();
-            Microsoft.Data.SqlClient.SqlDataReader dreader = database_Controller.select(querry);
 
 
-
-            while (dreader.Read())
+            using (var session = database_Controller.sessionFactory.OpenSession())
             {
 
-                string item_name = "";
 
-                DateTime item_bought = new DateTime();
-                DateTime item_retired = new DateTime();
-                float price = 0;
-                string description = "";
-                string company_name = "";
-                float rating = 0;
-                int id = 0;
-
-                if (dreader.IsDBNull(0) == false)
+                using (session.BeginTransaction())
                 {
-                    item_name = (string)dreader.GetValue(0);
+                    items = (List<Item>)session.CreateCriteria(typeof(Item))
+                      .List<Item>();
                 }
-                if (dreader.IsDBNull(1) == false)
-                {
-                    item_bought = dreader.GetDateTime(1);
-                }
-                if (dreader.IsDBNull(2) == false)
-                {
-                    item_retired = dreader.GetDateTime(2);
-                }
-                if (dreader.IsDBNull(3) == false)
-                {
-                    price = (float)dreader.GetDouble(3);
-                }
-                if (dreader.IsDBNull(4) == false)
-                {
-                    description = (string)dreader.GetValue(4);
-                }
-                if (dreader.IsDBNull(5) == false)
-                {
-                    company_name = (string)dreader.GetValue(5);
-                }
-                if (dreader.IsDBNull(6) == false)
-                {
-                    rating = (float)dreader.GetDouble(6);
-                }
-                if (dreader.IsDBNull(7) == false)
-                {
-                    id = dreader.GetInt32(7);
-                }
-                items.Add(new model.Item(item_name, item_bought, item_retired, price, description, company_name, rating, id));
             }
-            database_Controller.disconnect();
+
 
             return items;
         }
@@ -129,26 +113,37 @@ namespace My_equipment.dao
 
         public void delete_item(int id)
         {
-            string querry;
-            querry = "delete from items where id = " + id.ToString();
 
-            database_Controller.insert_create_delete(querry);
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    var queryString = string.Format("delete Item where id = :id");
+                    session.CreateQuery(queryString)
+                           .SetParameter("id", id)
+                           .ExecuteUpdate();
+
+                    transaction.Commit();
+                }
+
+
+            }
         }
 
         public void update_item(Item item)
         {
-            string querry;
-            querry = "update items set item_name='" +
-                item.item_name + "',item_bought='" +
-                item.item_bought.ToString("yyyy-MM-dd") + "',item_retired='" +
-                item.item_retired.ToString("yyyy-MM-dd") + "',price=" +
-                parseFloatToSql(item.price) + ",description='" +
-                item.description + "',company_name='" +
-                item.company_name + "',rating=" +
-                parseFloatToSql(item.rating) +
-                " where id = " + item.id;
 
-            database_Controller.insert_create_delete(querry);
+            using (var session = database_Controller.sessionFactory.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(item);
+                    transaction.Commit();
+                }
+;
+            }
         }
 
         public string[] get_header_names(int value)
