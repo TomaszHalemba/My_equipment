@@ -56,7 +56,7 @@ namespace My_equipment.model
             this.company_name = values[6];
             this.rating = float.Parse(values[7]);
 
-            this.price = float.Parse(values[8]);
+            this.cable_lenght = float.Parse(values[8]);
             this.microphone = Convert.ToBoolean(values[9]);
             this.volume_setter = Convert.ToBoolean(values[10]);
             this.mute_button = Convert.ToBoolean(values[11]);

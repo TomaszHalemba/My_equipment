@@ -8,61 +8,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using My_equipment.model;
+using NHibernate.Tool.hbm2ddl;
 
 namespace My_equipment.controler
 {
     class Database_controller
     {
         SqlConnection sqlConnection;
-        public ISessionFactory sessionFactory;
 
-        public void createDatabase()
+
+        private static ISessionFactory _sessionFactory;
+
+        private static ISessionFactory SessionFactory
         {
-
-            insert_create_delete("CREATE TABLE items(ID int IDENTITY(1,1) PRIMARY KEY," +
-                "item_name varchar(255) NOT NULL," +
-                "item_bought DATE," +
-                "item_retired DATE," +
-                "price float," +
-                "description varchar(255)," +
-                "company_name varchar(255)," +
-                "rating float," +
-                "); ");
-
-            insert_create_delete("CREATE TABLE Headphones(ID int FOREIGN KEY REFERENCES items(id) ON DELETE CASCADE," +
-                "cable_lenght float," +
-                "microphone bit," +
-                "volume_setter bit," +
-                "mute_button bit," +
-                "); ");
-
-
-        }
-        public void connect()
-        {
-            sqlConnection.Open();
+            get
+            {
+                if (_sessionFactory == null)
+                {
+                    InitializeSessionFactory();
+                }
+                return _sessionFactory;
+            }
         }
 
-        public int insert_create_delete_return_id(string querry)
+        private static void InitializeSessionFactory()
         {
-            SqlCommand cmd = new SqlCommand(querry, sqlConnection);
-            connect();
-            //cmd.ExecuteNonQuery();
+            _sessionFactory = (ISessionFactory)Fluently.Configure()
 
-            Int32 newId = (Int32)cmd.ExecuteScalar();
-            disconnect();
-            return newId;
+
+        .Database(
+               MsSqlConfiguration.MsSql2012.ConnectionString(@"Server=(localdb)\MSSQLLocalDB;Database=my_equipment;Integrated Security=true;")
+              )
+              .Mappings(m =>
+                m.FluentMappings.AddFromAssemblyOf<Item>()
+                ).ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
+              .BuildSessionFactory();
+
         }
-        public void insert_create_delete(string querry)
+
+        public static ISession OpenSession()
         {
-            SqlCommand cmd = new SqlCommand(querry, sqlConnection);
-            connect();
-            cmd.ExecuteNonQuery();
-            disconnect();
-        }
-        public void disconnect()
-        {
-            sqlConnection.Close();
+            return SessionFactory.OpenSession();
         }
 
         private static ISessionFactory CreateSessionFactory()
@@ -78,28 +64,6 @@ namespace My_equipment.controler
               .BuildSessionFactory();
         }
 
-
-        public Database_controller()
-        {
-            string connetionString;
-            connetionString = @"Server=(localdb)\MSSQLLocalDB;Database=my_equipment;Integrated Security=true;";
-            sqlConnection = new SqlConnection(connetionString);
-
-
-            sessionFactory = CreateSessionFactory();
-
-           
-        }
-
-        public SqlDataReader select(string querry)
-        {
-
-            SqlCommand cmd;
-            connect();
-            cmd = new SqlCommand(querry, sqlConnection);
-            SqlDataReader dreader = cmd.ExecuteReader();
-            return dreader;
-        }
 
     }
 }

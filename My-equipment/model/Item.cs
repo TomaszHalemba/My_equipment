@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace My_equipment.model
 {
-    public class Item
+    public class Item : Generic_entity
     {
 
         public virtual int id { get; set; }
@@ -96,7 +96,7 @@ namespace My_equipment.model
         {
             return this.id.ToString() + " " + this.item_name + " " + this.item_bought.ToString() + " " + this.item_retired.ToString() + " " + this.price.ToString() + " " + this.description + " " + this.company_name + " " + this.rating.ToString();
         }
-        public virtual string to_csv()
+        public override string to_csv()
         {
 
             return this.id.ToString() + ";" + this.item_name + ";" + this.item_bought.ToString() + ";" + this.item_retired.ToString() + ";" + this.price.ToString() + ";" + this.description + ";" + this.company_name + ";" + this.rating.ToString();

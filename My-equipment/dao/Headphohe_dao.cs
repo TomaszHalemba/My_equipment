@@ -6,36 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using My_equipment.controler;
 
 namespace My_equipment.dao
 {
     class Headphohe_dao : Item_interface<Headphone>, Form_interface<Headphone>
     {
-        controler.Database_controller database_Controller;
 
-        public Headphohe_dao()
-        {
-            database_Controller = new controler.Database_controller();
-        }
-        private string parse_float_to_sql(float value)
-        {
-            return value.ToString().Replace(",", ".");
-        }
-        private int parse_bool_to_sql(bool value)
-        {
-            if (value == true)
-                return 1;
-            return 0;
-        }
-        private int bool_to_int(bool value)
-        {
-            return value ? 1 : 0;
-        }
+
         public void add_item(Headphone item)
         {
 
 
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
 
 
@@ -46,17 +29,18 @@ namespace My_equipment.dao
                 }
             }
 
-
-
         }
 
         public void delete_item(Headphone item)
         {
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Delete(item);
+                    transaction.Commit();
+                }
 
-                session.Delete(item);
-                session.Flush();
 
             }
         }
@@ -64,10 +48,8 @@ namespace My_equipment.dao
         public void delete_item(int id)
         {
 
-
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
-
 
                 using (var transaction = session.BeginTransaction())
                 {
@@ -78,7 +60,6 @@ namespace My_equipment.dao
 
                     transaction.Commit();
                 }
-
 
             }
         }
@@ -142,10 +123,8 @@ namespace My_equipment.dao
             List<Headphone> headphones = new List<Headphone>();
 
 
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
-
-
                 using (session.BeginTransaction())
                 {
                     headphones = (List<Headphone>)session.CreateCriteria(typeof(Headphone))
@@ -183,31 +162,8 @@ namespace My_equipment.dao
 
         public void update_item(Headphone item)
         {
-            //string querry;
-            //querry = "update items set item_name='" +
-            //    item.item_name + "',item_bought='" +
-            //    item.item_bought.ToString("yyyy-MM-dd") + "',item_retired='" +
-            //    item.item_retired.ToString("yyyy-MM-dd") + "',price=" +
-            //    parse_float_to_sql(item.price) + ",description='" +
-            //    item.description + "',company_name='" +
-            //    item.company_name + "',rating=" +
-            //    parse_float_to_sql(item.rating) +
-            //    " where id = " + item.id;
 
-            //database_Controller.insert_create_delete(querry);
-
-
-
-            //querry = "update headphones set cable_lenght=" +
-            //parse_float_to_sql(item.cable_lenght) + ",microphone=" +
-            //parse_bool_to_sql(item.microphone) + ",volume_setter=" +
-            //parse_bool_to_sql(item.volume_setter) + ",mute_button=" +
-            //parse_bool_to_sql(item.mute_button) +
-            //" where id = " + item.id;
-
-            //database_Controller.insert_create_delete(querry);
-
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
                 {
@@ -216,12 +172,6 @@ namespace My_equipment.dao
                 }
 ;
             }
-
-
-
-
-
-
 
         }
         public int get_id_column_number()

@@ -38,7 +38,6 @@ namespace My_equipment
             this.Category_combobox = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -84,7 +83,8 @@ namespace My_equipment
             this.Category_combobox.FormattingEnabled = true;
             this.Category_combobox.Items.AddRange(new object[] {
             resources.GetString("Category_combobox.Items"),
-            resources.GetString("Category_combobox.Items1")});
+            resources.GetString("Category_combobox.Items1"),
+            resources.GetString("Category_combobox.Items2")});
             resources.ApplyResources(this.Category_combobox, "Category_combobox");
             this.Category_combobox.Name = "Category_combobox";
             this.Category_combobox.SelectedIndexChanged += new System.EventHandler(this.Category_combobox_SelectedIndexChanged);
@@ -100,17 +100,10 @@ namespace My_equipment
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem,
             this.exportToolStripMenuItem,
             this.importToolStripMenuItem});
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             resources.ApplyResources(this.databaseToolStripMenuItem, "databaseToolStripMenuItem");
-            // 
-            // createToolStripMenuItem
-            // 
-            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
-            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
@@ -154,7 +147,6 @@ namespace My_equipment
         private System.Windows.Forms.ComboBox Category_combobox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
     }

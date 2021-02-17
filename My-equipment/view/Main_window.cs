@@ -27,13 +27,17 @@ namespace My_equipment
         DataGridView panel;
         Item_dao item_Dao = new Item_dao();
         Headphohe_dao headphohe_Dao = new Headphohe_dao();
+        Book_dao book_dao = new Book_dao();
         Import_export_database import_Export_Database = new Import_export_database();
         ResourceManager resource_manager = new ResourceManager("My_equipment.resources.en", Assembly.GetExecutingAssembly());
 
 
         private readonly int item_index = 0;
         private readonly int headphone_index = 1;
+        private const int book_index = 2;
         private int current_show_index = 0;
+
+
 
 
 
@@ -44,10 +48,27 @@ namespace My_equipment
             InitializeComponent();
             Category_combobox.SelectedIndex = 0;
 
-            
+            //List<Author> authors = new List<Author> { new Author("firstN1", "lastN1", new DateTime()), new Author("firstN2", "lastN2", new DateTime()) };
+            ////Book item = new Book(3, authors, "test1234", new DateTime(), new DateTime(), new Genre("Fantasty"), new Publisher("Zombie"), 9f, "opis", false);
+
+            //Book item = book_dao.get_items()[0];
+
+            ////item.genre = new Genre("YYY");
+            //item.book_name = "jjj";
+            //item.publisher.name = "xxx";
+            //////item.id = 0;
+            //item.authors[0].first_name = "aaa";
+
+            //using (var session = Database_controller.OpenSession())
+            //{
 
 
-
+            //    using (var transaction = session.BeginTransaction())
+            //    {
+            //        session.SaveOrUpdate(item);
+            //        transaction.Commit();
+            //    }
+            //}
 
 
 
@@ -99,6 +120,13 @@ namespace My_equipment
                 change_panel_content(headphones_View);
             }
 
+            else if (current_show_index == book_index)
+            {
+
+                Add_book headphones_View = new Add_book();
+                change_panel_content(headphones_View);
+            }
+
 
 
 
@@ -131,6 +159,12 @@ namespace My_equipment
             {
                 bindingSource1.DataSource = headphohe_Dao.get_items();
                 header_names = headphohe_Dao.get_header_names(0);
+            }
+
+            else if (current_show_index == book_index)
+            {
+                bindingSource1.DataSource = book_dao.get_books();
+                header_names = book_dao.get_header_names(0);
             }
             else
             {
@@ -171,6 +205,12 @@ namespace My_equipment
                 Add_Headphone headphones_View = new Add_Headphone(1, item);
                 change_panel_content(headphones_View);
             }
+            else if (current_show_index == book_index)
+            {
+                model.Book item = book_dao.get_item_from_row(startingBalanceRow);
+                Add_book headphones_View = new Add_book(1, item);
+                change_panel_content(headphones_View);
+            }
             else
             {
                 MessageBox.Show(resource_manager.GetString("error_category", CultureInfo.CurrentCulture));
@@ -202,6 +242,10 @@ namespace My_equipment
             {
                 this.headphohe_Dao.delete_item((int)startingBalanceRow.Cells[this.headphohe_Dao.get_id_column_number()].Value);
             }
+            else if (current_show_index == book_index)
+            {
+                this.book_dao.delete_item((int)startingBalanceRow.Cells[this.book_dao.get_id_column_number()].Value);
+            }
             else
             {
                 MessageBox.Show(resource_manager.GetString("error_category", CultureInfo.CurrentCulture));
@@ -221,12 +265,6 @@ namespace My_equipment
 
         }
 
-        private void createToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Database_controller database = new Database_controller();
-            database.createDatabase();
-            MessageBox.Show(resource_manager.GetString("database_created", CultureInfo.CurrentCulture));
-        }
 
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {

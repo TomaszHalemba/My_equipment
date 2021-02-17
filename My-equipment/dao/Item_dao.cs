@@ -6,45 +6,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using My_equipment.controler;
 
 namespace My_equipment.dao
 {
     class Item_dao : interfaces.Item_interface<Item>, interfaces.Form_interface<Item>
     {
-        controler.Database_controller database_Controller;
 
-
-
-        private string parseFloatToSql(float value)
-        {
-            return value.ToString().Replace(",", ".");
-        }
 
         public void add_item(Item item)
         {
-
-
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
-
-
                 using (var transaction = session.BeginTransaction())
                 {
                     session.Save(item);
                     transaction.Commit();
                 }
             }
-
-
         }
 
         public void delete_item(Item item)
         {
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
-              
-                session.Delete(item);
-                session.Flush();
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Delete(item);
+                    transaction.Commit();
+                }
 
             }
         }
@@ -52,15 +42,11 @@ namespace My_equipment.dao
         public List<Item> get_items_only()
         {
             List<Item> items = new List<Item>();
-
-
-
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
                 items = session.Query<Item>()
-        .Where(c=> !(session.Query<Headphone>().Select(x => x.id)).Contains(c.id)  )
-        .ToList();
-
+                .Where(c => !(session.Query<Headphone>().Select(x => x.id)).Contains(c.id))
+                .ToList();
 
             }
 
@@ -74,10 +60,8 @@ namespace My_equipment.dao
             List<Item> items = new List<Item>();
 
 
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
-
-
                 using (session.BeginTransaction())
                 {
                     items = (List<Item>)session.CreateCriteria(typeof(Item))
@@ -91,7 +75,7 @@ namespace My_equipment.dao
 
         public Item get_item_from_row(DataGridViewRow row)
         {
-            int id = (int)row.Cells[0].Value;
+            int id = (int)row.Cells[get_id_column_number()].Value;
             string item_name = (string)row.Cells[1].Value;
             DateTime item_bought = (DateTime)row.Cells[2].Value;
             DateTime item_retired = (DateTime)row.Cells[3].Value;
@@ -104,17 +88,11 @@ namespace My_equipment.dao
 
         }
 
-        public Item_dao()
-        {
-            database_Controller = new controler.Database_controller();
-
-        }
-
 
         public void delete_item(int id)
         {
 
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
 
 
@@ -135,7 +113,7 @@ namespace My_equipment.dao
         public void update_item(Item item)
         {
 
-            using (var session = database_Controller.sessionFactory.OpenSession())
+            using (var session = Database_controller.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
                 {
