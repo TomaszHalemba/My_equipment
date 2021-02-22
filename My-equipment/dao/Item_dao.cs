@@ -7,10 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using My_equipment.controler;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
+using NHibernate.Tool.hbm2ddl;
 
 namespace My_equipment.dao
 {
-    class Item_dao : interfaces.Item_interface<Item>, interfaces.Form_interface<Item>
+    public class Item_dao : interfaces.Item_interface<Item>, interfaces.Form_interface<Item>
     {
 
 
@@ -57,6 +60,8 @@ namespace My_equipment.dao
 
         public List<Item> get_items()
         {
+
+
             List<Item> items = new List<Item>();
 
 

@@ -13,6 +13,7 @@ namespace My_equipment.dao
     {
         public void add_item(Author item)
         {
+            
             using (var session = Database_controller.OpenSession())
             {
 

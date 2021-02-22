@@ -287,6 +287,24 @@
   <data name="databaseToolStripMenuItem.Text" xml:space="preserve">
     <value>Database</value>
   </data>
+  <data name="itemsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="itemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="utilityToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="utilityToolStripMenuItem.Text" xml:space="preserve">
+    <value>Utility</value>
+  </data>
+  <data name="tablesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
+  </data>
+  <data name="tablesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tables</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -339,6 +357,24 @@
     <value>importToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;importToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tablesToolStripMenuItem.Name" xml:space="preserve">
+    <value>tablesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tablesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;itemsToolStripMenuItem.Name" xml:space="preserve">
+    <value>itemsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;itemsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;utilityToolStripMenuItem.Name" xml:space="preserve">
+    <value>utilityToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;utilityToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

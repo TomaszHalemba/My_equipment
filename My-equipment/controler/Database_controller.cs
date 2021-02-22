@@ -12,7 +12,7 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace My_equipment.controler
 {
-    class Database_controller
+    public class Database_controller
     {
         SqlConnection sqlConnection;
 
@@ -31,11 +31,15 @@ namespace My_equipment.controler
             }
         }
 
+        public static void set_session_factory(ISessionFactory sessionFactory)
+        {
+
+            _sessionFactory = sessionFactory;
+        }
+
         private static void InitializeSessionFactory()
         {
             _sessionFactory = (ISessionFactory)Fluently.Configure()
-
-
         .Database(
                MsSqlConfiguration.MsSql2012.ConnectionString(@"Server=(localdb)\MSSQLLocalDB;Database=my_equipment;Integrated Security=true;")
               )
@@ -45,6 +49,7 @@ namespace My_equipment.controler
               .BuildSessionFactory();
 
         }
+
 
         public static ISession OpenSession()
         {
