@@ -10,7 +10,7 @@ using My_equipment.controler;
 
 namespace My_equipment.dao
 {
-    class Headphohe_dao : Item_interface<Headphone>, Form_interface<Headphone>
+    public class Headphohe_dao : Item_interface<Headphone>, Form_interface<Headphone>
     {
 
 

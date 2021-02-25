@@ -18,6 +18,7 @@ using FluentNHibernate;
 using NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using NHibernate.Tool.hbm2ddl;
 
 namespace My_equipment
 {
@@ -99,7 +100,8 @@ namespace My_equipment
 
         private void add_button_Click(object sender, EventArgs e)
         {
-
+            Item item = new Item("tekst", new DateTime(), new DateTime(), 10f, "tmp", "comp", 3f);
+            item_Dao.add_item(item);
 
 
 

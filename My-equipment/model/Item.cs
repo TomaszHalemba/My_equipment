@@ -44,6 +44,24 @@ namespace My_equipment.model
             this.id = id;
         }
 
+        public virtual bool compare_values_no_id(Item item)
+        {
+
+
+            if (this.item_name.Equals(item.item_name) &&
+                this.item_bought.Equals(item.item_bought) &&
+                this.item_retired.Equals(item.item_retired) &&
+                this.price == item.price &&
+                this.description.Equals(item.description) &&
+                this.company_name.Equals(item.company_name) &&
+                this.rating == item.rating
+                )
+            {
+                return true;
+            }
+            return false;
+        }
+
         public Item(string line)
         {
             string[] values = line.Split(';');
@@ -90,6 +108,19 @@ namespace My_equipment.model
             this.description = description;
             this.company_name = company_name;
             this.rating = rating;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Item item =(Item)obj;
+            if (item.id==this.id && compare_values_no_id(item))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override string ToString()
