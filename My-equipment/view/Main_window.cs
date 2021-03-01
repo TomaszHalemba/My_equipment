@@ -42,37 +42,12 @@ namespace My_equipment
 
 
 
-      
+
 
         public Form1()
         {
             InitializeComponent();
             Category_combobox.SelectedIndex = 0;
-
-            //List<Author> authors = new List<Author> { new Author("firstN1", "lastN1", new DateTime()), new Author("firstN2", "lastN2", new DateTime()) };
-            ////Book item = new Book(3, authors, "test1234", new DateTime(), new DateTime(), new Genre("Fantasty"), new Publisher("Zombie"), 9f, "opis", false);
-
-            //Book item = book_dao.get_items()[0];
-
-            ////item.genre = new Genre("YYY");
-            //item.book_name = "jjj";
-            //item.publisher.name = "xxx";
-            //////item.id = 0;
-            //item.authors[0].first_name = "aaa";
-
-            //using (var session = Database_controller.OpenSession())
-            //{
-
-
-            //    using (var transaction = session.BeginTransaction())
-            //    {
-            //        session.SaveOrUpdate(item);
-            //        transaction.Commit();
-            //    }
-            //}
-
-
-
         }
 
         private void change_panel_content<T>(T new_content) where T : Form
@@ -219,10 +194,6 @@ namespace My_equipment
             }
 
 
-
-
-
-
         }
 
         private void delete_button_Click(object sender, EventArgs e)
@@ -256,14 +227,6 @@ namespace My_equipment
 
 
             show_button_Click(sender, e);
-
-        }
-
-
-
-
-        private void Category_combobox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 

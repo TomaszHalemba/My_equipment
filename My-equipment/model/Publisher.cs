@@ -29,6 +29,19 @@ namespace My_equipment.model
             this.name = name;
 
         }
+
+        public override bool Equals(object obj)
+        {
+            Publisher publisher = (Publisher)obj;
+            if (
+                this.id == publisher.id &&
+                this.name == publisher.name
+                )
+            {
+                return true;
+            }
+            else return false;
+        }
         public override string to_csv()
         {
             return this.id.ToString() + ";" + this.name;

@@ -152,6 +152,7 @@
     <Compile Include="dao\Book_dao.cs" />
     <Compile Include="dao\Item_dao.cs" />
     <Compile Include="dao\Publisher_dao.cs" />
+    <Compile Include="datagrid_classes\Book_view.cs" />
     <Compile Include="interfaces\Form_interface.cs" />
     <Compile Include="maps\Author_map.cs" />
     <Compile Include="maps\Book_map.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NHibernate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,21 @@ namespace My_equipment.model
 
         public Book()
         {
+
+        }
+
+        public Book(Book book)
+        {
+            this.authors = book.authors;
+            this.book_name = book.book_name;
+            this.date_borrowed = book.date_borrowed;
+            this.date_returned = book.date_returned;
+            this.description = book.description;
+            this.genre = book.genre;
+            this.has_been_readed = book.has_been_readed;
+            this.id = book.id;
+            this.publisher = book.publisher;
+            this.rating = book.rating;
 
         }
         public Book(int id, List<Author> authors, string book_name, DateTime date_borrowed, DateTime date_return, Genre genre, Publisher publisher, float rating, string description, bool has_been_readed)
@@ -54,6 +70,33 @@ namespace My_equipment.model
             this.rating = float.Parse(values[6]);
             this.description = values[7];
             this.has_been_readed = Convert.ToBoolean(values[8]);
+        }
+
+        public override bool Equals(object obj)
+        {
+            Book book = (Book)obj;
+            if (
+                (NHibernateUtil.IsInitialized(book.authors) && this.authors.SequenceEqual(book.authors)) || !NHibernateUtil.IsInitialized(book.authors) &&
+                this.book_name.Equals(book.book_name) &&
+                this.date_borrowed.Equals(book.date_borrowed) &&
+                this.date_returned.Equals(book.date_returned) &&
+                this.description.Equals(book.description) &&
+                (NHibernateUtil.IsInitialized(book.genre) && this.genre.Equals(book.genre)) || !NHibernateUtil.IsInitialized(book.genre) &&
+                this.has_been_readed == book.has_been_readed &&
+                this.id == book.id &&
+                (NHibernateUtil.IsInitialized(book.publisher) && this.publisher.Equals(book.publisher)) || !NHibernateUtil.IsInitialized(book.publisher) &&
+                this.rating == book.rating
+                )
+            {
+
+                return true;
+
+
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override string to_csv()

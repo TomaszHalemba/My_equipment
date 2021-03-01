@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace My_equipment.dao
 {
-    class Publisher_dao : interfaces.Item_interface<Publisher>
+    public class Publisher_dao : interfaces.Item_interface<Publisher>
     {
         public void add_item(Publisher item)
         {
@@ -28,7 +28,15 @@ namespace My_equipment.dao
 
         public void delete_item(Publisher item)
         {
-            throw new NotImplementedException();
+            using (var session = Database_controller.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Delete(item);
+                    transaction.Commit();
+                }
+
+            }
         }
 
         public void delete_item(int id)

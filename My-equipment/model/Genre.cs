@@ -33,5 +33,18 @@ namespace My_equipment.model
             return this.id.ToString() + ";" + this.name;
         }
 
+        public override bool Equals(object obj)
+        {
+            Genre genre = (Genre)obj;
+            if (
+                this.id == genre.id &&
+                this.name == genre.name
+                )
+            {
+                return true;
+            }
+            else return false;
+        }
+
     }
 }

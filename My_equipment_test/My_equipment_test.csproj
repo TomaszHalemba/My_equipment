@@ -72,6 +72,7 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Book_dao_test.cs" />
     <Compile Include="Item_dao_test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

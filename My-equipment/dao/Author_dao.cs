@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    class Author_dao : interfaces.Item_interface<Author>
+    public class Author_dao : interfaces.Item_interface<Author>
     {
         public void add_item(Author item)
         {
-            
+
             using (var session = Database_controller.OpenSession())
             {
 
@@ -27,7 +27,15 @@ namespace My_equipment.dao
 
         public void delete_item(Author item)
         {
-            throw new NotImplementedException();
+            using (var session = Database_controller.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Delete(item);
+                    transaction.Commit();
+                }
+
+            }
         }
 
         public void delete_item(int id)

@@ -20,12 +20,12 @@ namespace My_equipment.maps
             Map(x => x.rating);
             Map(x => x.has_been_readed);
             References(x => x.genre).Cascade.SaveUpdate() //#3
-            .Column("genre").Not.LazyLoad();
+            .Column("genre");//.Not.LazyLoad();
             References(x => x.publisher).Cascade.SaveUpdate() //#3
-            .Column("publisher").Not.LazyLoad();
+            .Column("publisher");//.Not.LazyLoad();
 
 
-            HasManyToMany(x => x.authors).Table("Book_Author").Cascade.All().Not.LazyLoad()
+            HasManyToMany(x => x.authors).Table("Book_Author").Cascade.All()//.Not.LazyLoad()
                     .ParentKeyColumn("Book_id")
                     .ChildKeyColumn("Author_id");
 
