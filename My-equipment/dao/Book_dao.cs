@@ -94,12 +94,6 @@ namespace My_equipment.dao
 
             List<Book_view> book_querry = items.Select(x => new Book_view(x.id, x.book_name, String.Join(";", x.authors.Select(m => m.first_name + " " + m.last_name).ToArray()), x.date_borrowed, x.date_returned, x.description, x.rating, x.genre.name, x.publisher.name, x.has_been_readed)).ToList();
 
-            //List<Book_view> book_querry = from book in items
-            //                           let authors_string = String.Join(";", book.authors.Select(m => m.first_name + " " + m.last_name).ToArray())
-
-            //                           select new { book.id, book.book_name, authors_string, book.date_borrowed, book.date_returned, book.description,book.rating, genre = book.genre.name, publisher = book.publisher.name,book.has_been_readed };
-            //new ClearBook {
-            //    Code = x.Code, Book = x.Book}).ToList();
 
 
 

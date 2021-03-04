@@ -41,6 +41,14 @@ namespace My_equipment.model
             this.birth_date = Convert.ToDateTime(values[3]);
         }
 
+        public Author(int item_id, string first_name, string last_name, DateTime birth_date)
+        {
+            this.id = item_id;
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.birth_date = birth_date;
+        }
+
         public virtual bool compare_values(Author author)
         {
             if (this.first_name.Equals(author.first_name) && this.last_name.Equals(author.last_name) && this.birth_date.Equals(author.birth_date))

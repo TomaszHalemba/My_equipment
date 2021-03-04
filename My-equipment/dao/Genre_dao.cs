@@ -59,7 +59,16 @@ namespace My_equipment.dao
 
         public void update_item(Genre item)
         {
-            throw new NotImplementedException();
+
+            using (var session = Database_controller.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(item);
+                    transaction.Commit();
+                }
+;
+            }
         }
     }
 }

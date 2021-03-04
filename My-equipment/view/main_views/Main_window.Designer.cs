@@ -90,7 +90,6 @@ namespace My_equipment
             resources.GetString("Category_combobox.Items2")});
             resources.ApplyResources(this.Category_combobox, "Category_combobox");
             this.Category_combobox.Name = "Category_combobox";
-            this.Category_combobox.SelectedIndexChanged += new System.EventHandler(this.Category_combobox_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -133,11 +132,13 @@ namespace My_equipment
             // 
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
             resources.ApplyResources(this.itemsToolStripMenuItem, "itemsToolStripMenuItem");
+            this.itemsToolStripMenuItem.Click += new System.EventHandler(this.itemsToolStripMenuItem_Click);
             // 
             // utilityToolStripMenuItem
             // 
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             resources.ApplyResources(this.utilityToolStripMenuItem, "utilityToolStripMenuItem");
+            this.utilityToolStripMenuItem.Click += new System.EventHandler(this.utilityToolStripMenuItem_Click);
             // 
             // Form1
             // 

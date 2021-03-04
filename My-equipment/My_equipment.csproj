@@ -175,16 +175,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="view\Add_book.cs">
+    <Compile Include="view\helper_views\Add_author.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Add_book.Designer.cs">
+    <Compile Include="view\helper_views\Add_author.Designer.cs">
+      <DependentUpon>Add_author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\main_class_selectors\Item_select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\main_views\Add_book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\main_views\Add_book.Designer.cs">
       <DependentUpon>Add_book.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Main_window.cs">
+    <Compile Include="view\main_views\Main_window.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Main_window.Designer.cs">
+    <Compile Include="view\main_views\Main_window.Designer.cs">
       <DependentUpon>Main_window.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Item_interface.cs" />
@@ -192,22 +201,22 @@
     <Compile Include="model\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\Add_Headphone.cs">
+    <Compile Include="view\main_views\Add_Headphone.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Add_Headphone.Designer.cs">
+    <Compile Include="view\main_views\Add_Headphone.Designer.cs">
       <DependentUpon>Add_Headphone.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Add_Item.cs">
+    <Compile Include="view\main_views\Add_Item.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Add_Item.Designer.cs">
+    <Compile Include="view\main_views\Add_Item.Designer.cs">
       <DependentUpon>Add_Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Item_views.cs">
+    <Compile Include="view\main_views\Item_views.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Item_views.Designer.cs">
+    <Compile Include="view\main_views\Item_views.Designer.cs">
       <DependentUpon>Item_views.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="resources\en.resx">
@@ -218,10 +227,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Add_book.resx">
+    <EmbeddedResource Include="view\helper_views\Add_author.resx">
+      <DependentUpon>Add_author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\main_views\Add_book.resx">
       <DependentUpon>Add_book.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Main_window.resx">
+    <EmbeddedResource Include="view\main_views\Main_window.resx">
       <DependentUpon>Main_window.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -234,13 +246,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="view\Add_Headphone.resx">
+    <EmbeddedResource Include="view\main_views\Add_Headphone.resx">
       <DependentUpon>Add_Headphone.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Add_Item.resx">
+    <EmbeddedResource Include="view\main_views\Add_Item.resx">
       <DependentUpon>Add_Item.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Item_views.resx">
+    <EmbeddedResource Include="view\main_views\Item_views.resx">
       <DependentUpon>Item_views.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

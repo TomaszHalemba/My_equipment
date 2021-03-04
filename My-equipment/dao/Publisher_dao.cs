@@ -15,11 +15,8 @@ namespace My_equipment.dao
         {
             using (var session = Database_controller.OpenSession())
             {
-
-
                 using (var transaction = session.BeginTransaction())
                 {
-
                     session.Save(item);
                     transaction.Commit();
                 }
@@ -66,7 +63,16 @@ namespace My_equipment.dao
 
         public void update_item(Publisher item)
         {
-            throw new NotImplementedException();
+
+            using (var session = Database_controller.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(item);
+                    transaction.Commit();
+                }
+;
+            }
         }
     }
 }

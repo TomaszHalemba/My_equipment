@@ -33,13 +33,12 @@ namespace My_equipment
         ResourceManager resource_manager = new ResourceManager("My_equipment.resources.en", Assembly.GetExecutingAssembly());
 
 
-        private readonly int item_index = 0;
-        private readonly int headphone_index = 1;
-        private const int book_index = 2;
         private int current_show_index = 0;
+        private int current_category_for_tables = 0;
 
+        enum tables_picker { Items, Utility }
 
-
+        enum item_picker { item, headphone, book };
 
 
 
@@ -65,7 +64,6 @@ namespace My_equipment
             int a = 0;
             foreach (string name in name_tables)
             {
-
                 panel.Columns[a].HeaderText = name;
                 a++;
             }
@@ -75,79 +73,26 @@ namespace My_equipment
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            Item item = new Item("tekst", new DateTime(), new DateTime(), 10f, "tmp", "comp", 3f);
-            item_Dao.add_item(item);
-
-
-
-
-
-
             current_show_index = Category_combobox.SelectedIndex;
-            if (current_show_index == item_index)
-            {
-
-                Add_Item headphones_View = new Add_Item();
-                change_panel_content(headphones_View);
-            }
-            else if (current_show_index == headphone_index)
-            {
-
-                Add_Headphone headphones_View = new Add_Headphone();
-                change_panel_content(headphones_View);
-            }
-
-            else if (current_show_index == book_index)
-            {
-
-                Add_book headphones_View = new Add_book();
-                change_panel_content(headphones_View);
-            }
-
-
-
-
-
-
-
+            add_button_for_items();
         }
+
+
 
         private void show_button_Click(object sender, EventArgs e)
         {
-
             Item_views headphones_View = new Item_views();
             change_panel_content(headphones_View);
             panel = (DataGridView)this.Controls.Find("dataGridView1", true)[0];
             BindingSource bindingSource1 = new BindingSource();
 
-            string[] header_names;
+            string[] header_names = null;
             current_show_index = Category_combobox.SelectedIndex;
 
 
-            if (current_show_index == item_index)
-            {
-                bindingSource1.DataSource = item_Dao.get_items();
-                header_names = item_Dao.get_header_names(0);
+            set_data_for_show_button_for_items(ref bindingSource1, ref header_names);
 
 
-            }
-
-            else if (current_show_index == headphone_index)
-            {
-                bindingSource1.DataSource = headphohe_Dao.get_items();
-                header_names = headphohe_Dao.get_header_names(0);
-            }
-
-            else if (current_show_index == book_index)
-            {
-                bindingSource1.DataSource = book_dao.get_books();
-                header_names = book_dao.get_header_names(0);
-            }
-            else
-            {
-                bindingSource1.DataSource = item_Dao.get_items();
-                header_names = item_Dao.get_header_names(0);
-            }
 
             panel.DataSource = bindingSource1;
             set_panel_header_names(panel, header_names);
@@ -167,31 +112,7 @@ namespace My_equipment
             panel = (DataGridView)this.Controls.Find("dataGridView1", true)[0];
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
 
-
-            if (current_show_index == item_index)
-            {
-                Item item = this.item_Dao.get_item_from_row(startingBalanceRow);
-                Add_Item headphones_View = new Add_Item(1, item);
-                change_panel_content(headphones_View);
-
-            }
-
-            else if (current_show_index == headphone_index)
-            {
-                model.Headphone item = this.headphohe_Dao.get_item_from_row(startingBalanceRow);
-                Add_Headphone headphones_View = new Add_Headphone(1, item);
-                change_panel_content(headphones_View);
-            }
-            else if (current_show_index == book_index)
-            {
-                model.Book item = book_dao.get_item_from_row(startingBalanceRow);
-                Add_book headphones_View = new Add_book(1, item);
-                change_panel_content(headphones_View);
-            }
-            else
-            {
-                MessageBox.Show(resource_manager.GetString("error_category", CultureInfo.CurrentCulture));
-            }
+            modify_button_for_items(startingBalanceRow);
 
 
         }
@@ -205,24 +126,7 @@ namespace My_equipment
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
 
 
-            if (current_show_index == item_index)
-            {
-                this.item_Dao.delete_item((int)startingBalanceRow.Cells[this.item_Dao.get_id_column_number()].Value);
-
-            }
-
-            else if (current_show_index == headphone_index)
-            {
-                this.headphohe_Dao.delete_item((int)startingBalanceRow.Cells[this.headphohe_Dao.get_id_column_number()].Value);
-            }
-            else if (current_show_index == book_index)
-            {
-                this.book_dao.delete_item((int)startingBalanceRow.Cells[this.book_dao.get_id_column_number()].Value);
-            }
-            else
-            {
-                MessageBox.Show(resource_manager.GetString("error_category", CultureInfo.CurrentCulture));
-            }
+            delete_button_for_items(startingBalanceRow);
 
 
 
@@ -241,6 +145,16 @@ namespace My_equipment
         {
             import_Export_Database.import_all();
             MessageBox.Show(resource_manager.GetString("imported_ok", CultureInfo.CurrentCulture));
+        }
+
+        private void itemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            current_category_for_tables = 0;
+        }
+
+        private void utilityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            current_category_for_tables = 1;
         }
     }
 }

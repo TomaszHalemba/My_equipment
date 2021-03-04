@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace My_equipment.dao
 {
-    public class Author_dao : interfaces.Item_interface<Author>
+    public class Author_dao : interfaces.Item_interface<Author>, interfaces.Form_interface<Author>
     {
         public void add_item(Author item)
         {
@@ -43,6 +43,16 @@ namespace My_equipment.dao
             throw new NotImplementedException();
         }
 
+        public string[] get_header_names(int value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int get_id_column_number()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Author> get_items()
         {
             List<Author> authors = new List<Author>();
@@ -61,9 +71,23 @@ namespace My_equipment.dao
             return authors;
         }
 
-        public void update_item(Author item)
+        public Author get_item_from_row(DataGridViewRow row)
         {
             throw new NotImplementedException();
+        }
+
+        public void update_item(Author item)
+        {
+
+            using (var session = Database_controller.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(item);
+                    transaction.Commit();
+                }
+;
+            }
         }
     }
 }
