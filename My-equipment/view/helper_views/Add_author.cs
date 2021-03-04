@@ -60,6 +60,7 @@ namespace My_equipment.view
 
         private void set_values(Author author)
         {
+            item_id = author.id;
             first_name_textbox.Text = author.first_name;
             last_name_textbox.Text = author.last_name;
 

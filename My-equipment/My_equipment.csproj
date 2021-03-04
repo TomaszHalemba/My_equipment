@@ -181,6 +181,9 @@
     <Compile Include="view\helper_views\Add_author.Designer.cs">
       <DependentUpon>Add_author.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\main_class_selectors\Utility_select.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="view\main_class_selectors\Item_select.cs">
       <SubType>Form</SubType>
     </Compile>

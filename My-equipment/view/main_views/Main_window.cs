@@ -39,6 +39,7 @@ namespace My_equipment
         enum tables_picker { Items, Utility }
 
         enum item_picker { item, headphone, book };
+        enum utility_picker { author,genre,publisher}
 
 
 
@@ -74,7 +75,15 @@ namespace My_equipment
         private void add_button_Click(object sender, EventArgs e)
         {
             current_show_index = Category_combobox.SelectedIndex;
-            add_button_for_items();
+            if (current_category_for_tables == (int)tables_picker.Items)
+            {
+                add_button_for_items();
+            }
+            else if (current_category_for_tables == (int)tables_picker.Utility)
+            {
+                add_button_for_utility();
+            }
+
         }
 
 
@@ -89,9 +98,18 @@ namespace My_equipment
             string[] header_names = null;
             current_show_index = Category_combobox.SelectedIndex;
 
+            if (current_category_for_tables == (int)tables_picker.Items)
+            {
+                set_data_for_show_button_for_items(ref bindingSource1, ref header_names);
 
-            set_data_for_show_button_for_items(ref bindingSource1, ref header_names);
+            }
+            else if (current_category_for_tables == (int)tables_picker.Utility)
+            {
+                set_data_for_show_button_for_utility(ref bindingSource1, ref header_names);
+            }
 
+
+           
 
 
             panel.DataSource = bindingSource1;
@@ -112,7 +130,17 @@ namespace My_equipment
             panel = (DataGridView)this.Controls.Find("dataGridView1", true)[0];
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
 
-            modify_button_for_items(startingBalanceRow);
+
+            if (current_category_for_tables == (int)tables_picker.Items)
+            {
+                modify_button_for_items(startingBalanceRow);
+
+            }
+            else if (current_category_for_tables == (int)tables_picker.Utility)
+            {
+                modify_button_for_utility(startingBalanceRow);
+            }
+            
 
 
         }
@@ -126,7 +154,17 @@ namespace My_equipment
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
 
 
-            delete_button_for_items(startingBalanceRow);
+            
+
+            if (current_category_for_tables == (int)tables_picker.Items)
+            {
+                delete_button_for_items(startingBalanceRow);
+
+            }
+            else if (current_category_for_tables == (int)tables_picker.Utility)
+            {
+                delete_button_for_utility(startingBalanceRow);
+            }
 
 
 
@@ -150,11 +188,20 @@ namespace My_equipment
         private void itemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             current_category_for_tables = 0;
+            Category_combobox.Items.Clear();
+            Category_combobox.Items.Add("Items");
+            Category_combobox.Items.Add("Headphones");
+            Category_combobox.Items.Add("Books");
+            Category_combobox.SelectedIndex = 0;
         }
 
         private void utilityToolStripMenuItem_Click(object sender, EventArgs e)
         {
             current_category_for_tables = 1;
+            Category_combobox.Items.Clear();
+           
+            Category_combobox.Items.Add("Authors");
+            Category_combobox.SelectedIndex = 0;
         }
     }
 }
