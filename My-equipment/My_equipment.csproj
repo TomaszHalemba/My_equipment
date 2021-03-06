@@ -175,6 +175,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="view\helper_views\Add_publisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\helper_views\Add_publisher.Designer.cs">
+      <DependentUpon>Add_publisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\helper_views\Add_genre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\helper_views\Add_genre.Designer.cs">
+      <DependentUpon>Add_genre.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\helper_views\Add_author.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +241,12 @@
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\helper_views\Add_publisher.resx">
+      <DependentUpon>Add_publisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\helper_views\Add_genre.resx">
+      <DependentUpon>Add_genre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\helper_views\Add_author.resx">
       <DependentUpon>Add_author.cs</DependentUpon>

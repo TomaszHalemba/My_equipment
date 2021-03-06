@@ -14,6 +14,7 @@ namespace My_equipment.model
         public virtual string last_name { get; set; }
         public virtual DateTime birth_date { get; set; }
 
+        [System.ComponentModel.Browsable(false)]
         public virtual IList<Book> books { get; set; }
 
 

@@ -11,6 +11,7 @@ namespace My_equipment.model
         public virtual int id { get; set; }
         public virtual string name { get; set; }
 
+        [System.ComponentModel.Browsable(false)]
         public virtual IList<Book> books { get; protected set; }
 
         public Publisher() { }

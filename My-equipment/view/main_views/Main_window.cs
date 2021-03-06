@@ -201,6 +201,8 @@ namespace My_equipment
             Category_combobox.Items.Clear();
            
             Category_combobox.Items.Add("Authors");
+            Category_combobox.Items.Add("Genre");
+            Category_combobox.Items.Add("Publisher");
             Category_combobox.SelectedIndex = 0;
         }
     }
