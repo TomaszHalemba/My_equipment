@@ -35,9 +35,12 @@ namespace My_equipment.view
         public Item_views()
         {
             InitializeComponent();
-            var source = new BindingSource();
-            List<MyStruct> table = new List<MyStruct> { new MyStruct("fff", "b"), new MyStruct("c", "d") };
-            set_data_grid_view(table);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

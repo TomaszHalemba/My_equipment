@@ -13,12 +13,17 @@ namespace My_equipment
     {
 
 
-        private void set_data_for_show_button_for_items(ref BindingSource bindingSource, ref string [] header_names)
+        private  void  set_data_for_show_button_for_items(ref BindingSource bindingSource, ref string [] header_names)
         {
             if (current_show_index == (int)item_picker.item)
             {
-                bindingSource.DataSource = item_Dao.get_items();
+
+                //tmp = await item_Dao.get_items1();
                 header_names = item_Dao.get_header_names(0);
+                bindingSource.DataSource = item_Dao.get_items();
+
+                    
+
             }
 
             else if (current_show_index == (int)item_picker.headphone)
@@ -37,6 +42,7 @@ namespace My_equipment
                 bindingSource.DataSource = item_Dao.get_items();
                 header_names = item_Dao.get_header_names(0);
             }
+            //bindingSource.DataSource = tmp;
         }
 
         private void modify_button_for_items(DataGridViewRow startingBalanceRow)

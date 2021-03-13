@@ -19,6 +19,7 @@ using NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate.Tool.hbm2ddl;
+using System.Threading;
 
 namespace My_equipment
 {
@@ -39,7 +40,7 @@ namespace My_equipment
         enum tables_picker { Items, Utility }
 
         enum item_picker { item, headphone, book };
-        enum utility_picker { author,genre,publisher}
+        enum utility_picker { author, genre, publisher }
 
 
 
@@ -90,34 +91,48 @@ namespace My_equipment
 
         private void show_button_Click(object sender, EventArgs e)
         {
+
+
             Item_views headphones_View = new Item_views();
             change_panel_content(headphones_View);
+            current_show_index = Category_combobox.SelectedIndex;
             panel = (DataGridView)this.Controls.Find("dataGridView1", true)[0];
             BindingSource bindingSource1 = new BindingSource();
 
             string[] header_names = null;
-            current_show_index = Category_combobox.SelectedIndex;
-
-            if (current_category_for_tables == (int)tables_picker.Items)
+            Thread thr = new Thread(() =>
             {
-                set_data_for_show_button_for_items(ref bindingSource1, ref header_names);
 
-            }
-            else if (current_category_for_tables == (int)tables_picker.Utility)
-            {
-                set_data_for_show_button_for_utility(ref bindingSource1, ref header_names);
-            }
+                if (current_category_for_tables == (int)tables_picker.Items)
+                {
+
+                    set_data_for_show_button_for_items(ref bindingSource1, ref header_names);
+
+                }
+                else if (current_category_for_tables == (int)tables_picker.Utility)
+                {
+                    set_data_for_show_button_for_utility(ref bindingSource1, ref header_names);
+                }
+
+                panel.Invoke(new Action(() =>
+                {
+                    panel.DataSource = bindingSource1;
+                    set_panel_header_names(panel, header_names);
+                }));
+            });
+            thr.Start();
 
 
-           
 
 
-            panel.DataSource = bindingSource1;
-            set_panel_header_names(panel, header_names);
+
             panel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             panel.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             panel.AllowUserToOrderColumns = true;
             panel.AllowUserToResizeColumns = true;
+
+
+
 
 
 
@@ -140,7 +155,7 @@ namespace My_equipment
             {
                 modify_button_for_utility(startingBalanceRow);
             }
-            
+
 
 
         }
@@ -154,7 +169,7 @@ namespace My_equipment
             DataGridViewRow startingBalanceRow = panel.Rows[panel.CurrentCell.RowIndex];
 
 
-            
+
 
             if (current_category_for_tables == (int)tables_picker.Items)
             {
@@ -199,7 +214,7 @@ namespace My_equipment
         {
             current_category_for_tables = 1;
             Category_combobox.Items.Clear();
-           
+
             Category_combobox.Items.Add("Authors");
             Category_combobox.Items.Add("Genre");
             Category_combobox.Items.Add("Publisher");
